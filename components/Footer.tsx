@@ -2,39 +2,36 @@
 
 import React from "react";
 import { Divider, Link } from "@heroui/react";
-import { Zap, Facebook, Instagram, Twitter, Github } from "lucide-react";
+import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 const footerNavigation = {
   services: [
-    { name: "Branding", href: "#" },
-    { name: "Data Analysis", href: "#" },
-    { name: "E-commerce Solutions", href: "#" },
-    { name: "Market Research", href: "#" },
+    { name: "ISO Certification", href: "#" },
+    { name: "API Q1 Consultancy", href: "#" },
+    { name: "NDT Services", href: "#" },
+    { name: "Welding Certification", href: "#" },
+    { name: "Inspection Services", href: "#" },
+    { name: "Audit Management", href: "#" },
   ],
   supportOptions: [
-    { name: "Pricing Plans", href: "#" },
-    { name: "User Guides", href: "#" },
-    { name: "Tutorials", href: "#" },
-    { name: "Service Status", href: "#" },
+    { name: "Contact Us", href: "#" },
+    { name: "Request Quote", href: "#" },
+    { name: "Training Calendar", href: "#" },
+    { name: "Resources", href: "#" },
   ],
   aboutUs: [
     { name: "Our Story", href: "#" },
-    { name: "Latest News", href: "#" },
-    { name: "Career Opportunities", href: "#" },
-    { name: "Media Enquiries", href: "#" },
-    { name: "Collaborations", href: "#" },
+    { name: "Team", href: "#" },
+    { name: "Certifications", href: "#" },
+    { name: "Careers", href: "#" },
   ],
   legal: [
-    { name: "Claim", href: "#" },
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
-    { name: "User Agreement", href: "#" },
+    { name: "Privacy Policy", href: "#" },
+    { name: "Terms of Service", href: "#" },
   ],
   social: [
-    { name: "Facebook", href: "#", icon: Facebook },
-    { name: "Instagram", href: "#", icon: Instagram },
-    { name: "Twitter", href: "#", icon: Twitter },
-    { name: "GitHub", href: "#", icon: Github },
+    { name: "LinkedIn", href: "#", icon: Linkedin },
+    { name: "Email", href: "mailto:info@bescertification.com", icon: Mail },
   ],
 };
 
@@ -52,7 +49,11 @@ export default function Footer() {
         <ul className="mt-6 space-y-4">
           {items.map((item) => (
             <li key={item.name}>
-              <Link className="text-default-400" href={item.href} size="sm">
+              <Link
+                className="text-default-400 hover:text-bes-primary transition"
+                href={item.href}
+                size="sm"
+              >
                 {item.name}
               </Link>
             </li>
@@ -68,19 +69,24 @@ export default function Footer() {
       <div className="px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 md:pr-8">
-            <div className="flex justify-start gap-2">
-              <div className="w-16">
-                <img src="logo.png" alt="logo" />
-              </div>
-
-              <div className="p-4">
-                <h1 className="font-bold text-xl">BES Certifications</h1>
-                <p>Lorem ipsum dolor sit amet.</p>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-3">
+                <div className="w-16">
+                  <img src="logo.png" alt="BES Logo" />
+                </div>
+                <div>
+                  <h1 className="font-bold text-xl text-bes-primary">
+                    BES Certification
+                  </h1>
+                  <p className="text-sm text-gray-600">Technical Services</p>
+                </div>
               </div>
             </div>
-            <p className="text-small text-default-500">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
-              elit, tristique
+            <p className="text-small text-default-500 leading-relaxed">
+              Certification | Compliance | Confidence
+              <br />
+              Building audit-ready management systems that improve real business
+              performance.
             </p>
             <div className="flex space-x-6">
               {footerNavigation.social.map((item) => {
@@ -89,7 +95,7 @@ export default function Footer() {
                   <Link
                     key={item.name}
                     isExternal
-                    className="text-default-400"
+                    className="text-default-400 hover:text-bes-primary transition"
                     href={item.href}
                   >
                     <span className="sr-only">{item.name}</span>
@@ -130,7 +136,8 @@ export default function Footer() {
         <Divider className="mt-16 sm:mt-20 lg:mt-24" />
         <div className="flex flex-wrap justify-between gap-2 pt-8">
           <p className="text-small text-default-400">
-            &copy; 2024 Acme Inc. All rights reserved.
+            &copy; {new Date().getFullYear()} BES Certification and Technical
+            Services. All rights reserved.
           </p>
         </div>
       </div>

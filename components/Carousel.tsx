@@ -11,11 +11,36 @@ interface CarouselItem {
 }
 
 const items: CarouselItem[] = [
-  { title: "Office Spaces", subtitle: "4000+ objects", image: "/hero.jpg" },
-  { title: "Warehouses", subtitle: "1000+ objects", image: "/hero.jpg" },
-  { title: "Land Plots", subtitle: "2000+ objects", image: "/hero.jpg" },
-  { title: "Retail", subtitle: "800+ objects", image: "/hero.jpg" },
-  { title: "Commercial", subtitle: "1500+ objects", image: "/hero.jpg" },
+  {
+    title: "ISO Certification & Consultancy",
+    subtitle: "ISO 9001, 14001, 45001",
+    image: "/hero.jpg",
+  },
+  {
+    title: "API Q1 Consultancy",
+    subtitle: "Oil & Gas Sector",
+    image: "/hero.jpg",
+  },
+  {
+    title: "NDT Training & Certification",
+    subtitle: "Technical Services",
+    image: "/hero.jpg",
+  },
+  {
+    title: "Welding Training & Certification",
+    subtitle: "Professional Development",
+    image: "/hero.jpg",
+  },
+  {
+    title: "Inspection Services",
+    subtitle: "Quality Assurance",
+    image: "/hero.jpg",
+  },
+  {
+    title: "Audit & Compliance Management",
+    subtitle: "Risk Management",
+    image: "/hero.jpg",
+  },
 ];
 
 export default function Carousel(): JSX.Element {
@@ -53,7 +78,7 @@ export default function Carousel(): JSX.Element {
         {items.map((item, index) => (
           <div
             key={index}
-            className="min-w-[300px] rounded-2xl bg-white shadow-md overflow-hidden"
+            className="md:min-w-[300px] min-w-full rounded-2xl bg-white shadow-md overflow-hidden"
           >
             <div className="relative h-[400px]">
               <img

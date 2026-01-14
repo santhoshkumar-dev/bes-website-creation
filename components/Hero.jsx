@@ -1,20 +1,8 @@
 "use client";
 
 import { Button } from "@heroui/react";
-import { useEffect, useState } from "react";
 
 function Hero() {
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setOffset(window.scrollY * 0.3); // parallax strength
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <section className="relative h-[80vh] rounded-3xl overflow-hidden">
       {/* Background */}
@@ -22,27 +10,41 @@ function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('/hero.jpg')",
+            "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('/hero.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          transform: `translateY(${offset}px)`,
-          willChange: "transform",
         }}
       />
 
       {/* Content */}
       <div className="relative z-10 h-full text-white flex items-center">
-        <div className="p-4 md:p-12 space-y-4">
-          <h1 className="md:text-6xl text-4xl font-extrabold">
-            Real Estate <br />
-            For Business
+        <div className="p-4 md:p-12 space-y-6 max-w-4xl">
+          <h1 className="md:text-7xl text-4xl font-extrabold leading-tight">
+            Certification. <br />
+            Compliance. <br />
+            Confidence.
           </h1>
 
-          <p className="text-xl max-w-xl">
-            Rent, sale, and selection of properties from offices to warehouses
+          <p className="text-lg md:text-2xl max-w-3xl leading-relaxed">
+            Practical, digital, audit-ready management systems that improve real
+            business performance.
           </p>
 
-          <Button className="bg-white text-black text-xl">Contact Us</Button>
+          <div className="flex flex-col md:flex-row gap-4 pt-4">
+            <Button
+              size="lg"
+              className="bg-white text-bes-primary font-semibold text-lg px-8"
+            >
+              Request a Consultation
+            </Button>
+            <Button
+              size="lg"
+              variant="bordered"
+              className="border-2 border-white text-white hover:bg-white/10 font-semibold text-lg px-8"
+            >
+              Talk to a Technical Expert
+            </Button>
+          </div>
         </div>
       </div>
     </section>

@@ -18,6 +18,12 @@ const config: Config = {
         "white-custom": "#ffffff",
         "teal-custom": "#7ea9a7",
         "dark-custom": "#2f2f2f",
+        // BES Professional Palette
+        "bes-primary": "#003366",
+        "bes-primary-light": "#004C99",
+        "bes-accent": "#5a8a87",
+        "bes-gray": "#2f2f2f",
+        "bes-gray-light": "#6b7280",
       },
       keyframes: {
         "scrolling-banner": {

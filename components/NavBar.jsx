@@ -12,7 +12,7 @@ import {
   Link,
 } from "@heroui/react";
 
-const navItems = ["Home", "Products", "About", "Contact"];
+const navItems = ["Home", "Services", "About", "Industries", "Contact"];
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,9 +25,15 @@ export default function NavBar() {
     >
       {/* Left: Logo */}
       <NavbarBrand>
-        <Link href="#">
+        <Link href="#" className="flex items-center gap-3">
           <div className="w-16">
-            <img src="logo.png" alt="Logo" />
+            <img src="logo.png" alt="BES Certification Logo" />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-bold text-lg text-bes-primary">
+              BES Certification
+            </span>
+            <span className="text-xs text-gray-600">Technical Services</span>
           </div>
         </Link>
       </NavbarBrand>
@@ -36,7 +42,7 @@ export default function NavBar() {
       <NavbarContent justify="end" className="hidden md:flex gap-6">
         {navItems.map((item) => (
           <NavbarItem key={item}>
-            <Link href="#" color="foreground">
+            <Link href="#" color="foreground" className="font-medium">
               {item}
             </Link>
           </NavbarItem>
