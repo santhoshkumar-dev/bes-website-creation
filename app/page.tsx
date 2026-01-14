@@ -5,6 +5,8 @@ import ScrollingBanner from "../components/ScrollingBanner";
 import Cataglog from "../components/Cataglog";
 import { Spacer } from "@heroui/react";
 import { Logo1, Logo2, Logo3, Logo4, Logo5, Logo6 } from "../components/logos";
+import HowWeWork from "@/components/HowWeWork";
+import Footer from "@/components/Footer";
 
 const logos = [
   {
@@ -55,6 +57,9 @@ export default function Home() {
       </section>
 
       <Cataglog />
+      <HowWeWork />
+
+      <Footer />
     </main>
   );
 }
