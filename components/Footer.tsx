@@ -68,9 +68,15 @@ export default function Footer() {
       <div className="px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 md:pr-8">
-            <div className="flex items-center justify-start gap-2">
-              <Zap size={44} className="text-primary" />
-              <span className="text-medium font-medium">ACME</span>
+            <div className="flex justify-start gap-2">
+              <div className="w-16">
+                <img src="logo.png" alt="logo" />
+              </div>
+
+              <div className="p-4">
+                <h1 className="font-bold text-xl">BES Certifications</h1>
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
             </div>
             <p className="text-small text-default-500">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque

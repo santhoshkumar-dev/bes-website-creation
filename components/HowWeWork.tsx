@@ -2,7 +2,7 @@ import { HdIcon, Icon, MessageCircle } from "lucide-react";
 
 const HowWeWork = () => {
   return (
-    <section className="flex justify-between gap-18 flex-col md:flex-row py-12">
+    <section className="flex justify-between flex-col md:flex-row py-12 md:gap-18">
       <div className="flex flex-col gap-2 basis-1/3">
         <h2 className="text-4xl md:text-6xl font-bold">How we work</h2>
 
@@ -10,7 +10,7 @@ const HowWeWork = () => {
           A wide selection of properties for your business
         </p>
 
-        <div className="h-[700px]">
+        <div className="h-[700px] hidden md:block">
           <img
             src="hero.jpg"
             alt=""
@@ -19,7 +19,7 @@ const HowWeWork = () => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center py-8 gap-2 basis-1/2 divide-y divide-secondary-100">
+      <div className="flex flex-col justify-center py-4 gap-2 basis-1/2 divide-y divide-secondary-100 md:py-8">
         {[
           { title: "Consultation and needs analysis", icon: <HdIcon /> },
           { title: "Property search and selection", icon: <HdIcon /> },
