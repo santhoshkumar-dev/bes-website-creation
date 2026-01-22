@@ -6,32 +6,27 @@ import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 const footerNavigation = {
   services: [
-    { name: "ISO Certification", href: "#" },
-    { name: "API Q1 Consultancy", href: "#" },
-    { name: "NDT Services", href: "#" },
-    { name: "Welding Certification", href: "#" },
-    { name: "Inspection Services", href: "#" },
-    { name: "Audit Management", href: "#" },
+    { name: "ISO Management Systems", href: "/services/iso" },
+    { name: "API Compliance & Technical", href: "/services/api-q1" },
+    { name: "NDT Services", href: "/services/ndt" },
+    { name: "Welding Services", href: "/services/welding" },
+    { name: "Inspection & Audit", href: "/services/inspection" },
+    { name: "Digital Systems", href: "/services/digital" },
   ],
-  supportOptions: [
-    { name: "Contact Us", href: "#" },
-    { name: "Request Quote", href: "#" },
-    { name: "Training Calendar", href: "#" },
-    { name: "Resources", href: "#" },
+  company: [
+    { name: "About BESCERT", href: "/about" },
+    { name: "Why BESCERT", href: "/why-bes" },
+    { name: "Industries Served", href: "/industries" },
+    { name: "Global Presence", href: "/global-presence" },
   ],
-  aboutUs: [
-    { name: "Our Story", href: "#" },
-    { name: "Team", href: "#" },
-    { name: "Certifications", href: "#" },
-    { name: "Careers", href: "#" },
-  ],
-  legal: [
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms of Service", href: "#" },
+  support: [
+    { name: "Consultancy Assurance Model", href: "/consultancy-assurance" },
+    { name: "FAQs", href: "/faqs" },
+    { name: "Contact Us", href: "/contact" },
   ],
   social: [
     { name: "LinkedIn", href: "#", icon: Linkedin },
-    { name: "Email", href: "mailto:info@bescertification.com", icon: Mail },
+    { name: "Email", href: "mailto:info@bescert.com", icon: Mail },
   ],
 };
 
@@ -61,7 +56,7 @@ export default function Footer() {
         </ul>
       </div>
     ),
-    []
+    [],
   );
 
   return (
@@ -72,22 +67,28 @@ export default function Footer() {
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-3">
                 <div className="w-16">
-                  <img src="logo.png" alt="BES Logo" />
+                  <img src="/logo.png" alt="BESCERT Logo" />
                 </div>
                 <div>
                   <h1 className="font-bold text-xl text-bes-primary">
-                    BES Certification
+                    BESCERT
                   </h1>
                   <p className="text-sm text-gray-600">Technical Services</p>
                 </div>
               </div>
             </div>
-            <p className="text-small text-default-500 leading-relaxed">
-              Certification | Compliance | Confidence
-              <br />
-              Building audit-ready management systems that improve real business
-              performance.
+            <p className="text-small text-default-500 leading-relaxed font-medium">
+              Assuring Your Business Growth.
             </p>
+            <p className="text-small text-default-500 leading-relaxed">
+              ISO | API | Welding | NDT | Inspection | Audit | Digital Systems
+              <br />
+              Building systems that grow businesses.
+            </p>
+            <div className="flex items-start gap-2 text-small text-default-500">
+              <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+              <span>Chennai, India</span>
+            </div>
             <div className="flex space-x-6">
               {footerNavigation.social.map((item) => {
                 const IconComponent = item.icon;
@@ -115,29 +116,42 @@ export default function Footer() {
               </div>
               <div className="mt-10 md:mt-0">
                 {renderList({
-                  title: "Support",
-                  items: footerNavigation.supportOptions,
+                  title: "Company",
+                  items: footerNavigation.company,
                 })}
               </div>
             </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
+            <div className="md:grid md:grid-cols-1 md:gap-8">
               <div>
                 {renderList({
-                  title: "About Us",
-                  items: footerNavigation.aboutUs,
+                  title: "Support",
+                  items: footerNavigation.support,
                 })}
-              </div>
-              <div className="mt-10 md:mt-0">
-                {renderList({ title: "Legal", items: footerNavigation.legal })}
               </div>
             </div>
           </div>
         </div>
+
+        {/* Compliance Disclaimer */}
+        <div className="mt-12 p-6 bg-default-100 rounded-lg">
+          <h4 className="text-sm font-semibold text-default-700 mb-2">
+            Professional Compliance Disclaimer
+          </h4>
+          <p className="text-xs text-default-500 leading-relaxed">
+            BES Certification and Technical Services (BESCERT) provides
+            consultancy, inspection, training, and technical support services
+            aligned with international standards. Certification is issued by
+            independent, accredited certification bodies. BESCERT supports
+            organizations in achieving audit readiness and maintaining
+            compliance but does not provide certification services directly.
+          </p>
+        </div>
+
         <Divider className="mt-16 sm:mt-20 lg:mt-24" />
         <div className="flex flex-wrap justify-between gap-2 pt-8">
           <p className="text-small text-default-400">
             &copy; {new Date().getFullYear()} BES Certification and Technical
-            Services. All rights reserved.
+            Services (BESCERT). All rights reserved.
           </p>
         </div>
       </div>
