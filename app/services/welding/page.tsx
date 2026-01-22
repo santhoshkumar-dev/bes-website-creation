@@ -3,97 +3,60 @@
 import { Card, CardBody, Button } from "@heroui/react";
 import {
   Flame,
-  FileText,
-  Users,
-  Award,
-  Shield,
   CheckCircle2,
+  FileCheck,
+  Award,
+  TrendingDown,
+  Shield,
 } from "lucide-react";
 import Link from "next/link";
 
 export default function WeldingServicesPage() {
-  const services = [
+  const servicesOffered = [
     {
-      icon: <Users className="w-10 h-10" />,
-      title: "Welder Training Programs",
-      description:
-        "Comprehensive training for various welding processes and positions.",
-      details: [
-        "SMAW (Shielded Metal Arc Welding)",
-        "GTAW/TIG (Gas Tungsten Arc Welding)",
-        "GMAW/MIG (Gas Metal Arc Welding)",
-        "FCAW (Flux-Cored Arc Welding)",
-        "SAW (Submerged Arc Welding)",
-      ],
-    },
-    {
-      icon: <FileText className="w-10 h-10" />,
-      title: "WPS/PQR Development",
-      description:
-        "Welding Procedure Specification and Procedure Qualification Record preparation.",
-      details: [
-        "Procedure development per codes (ASME, AWS, API)",
-        "Qualification testing and documentation",
-        "Essential variable analysis",
-        "pWPS (Preliminary WPS) preparation",
-      ],
-    },
-    {
-      icon: <Award className="w-10 h-10" />,
+      icon: <Award className="w-8 h-8" />,
       title: "Welder Qualification Testing",
       description:
-        "Welder performance qualification per international standards.",
-      details: [
-        "ASME Section IX qualification",
-        "AWS D1.1 qualification",
-        "API 1104 qualification",
-        "ISO 9606 qualification",
-        "Test piece evaluation and documentation",
-      ],
+        "Performance qualification tests per international codes (ASME, AWS, ISO) with documented records.",
     },
     {
-      icon: <Shield className="w-10 h-10" />,
-      title: "Technical Audits & Inspection",
+      icon: <FileCheck className="w-8 h-8" />,
+      title: "WPS/PQR Review & Development",
       description:
-        "Welding quality audits and process compliance verification.",
-      details: [
-        "Welding procedure compliance audits",
-        "Welder qualification verification",
-        "Equipment and consumable control",
-        "WPS implementation review",
-      ],
+        "Welding procedure specifications and procedure qualification records aligned with project requirements.",
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: "Inspection & Technical Audits",
+      description:
+        "Weld quality inspections, procedure compliance audits, and defect analysis for continuous improvement.",
+    },
+    {
+      icon: <TrendingDown className="w-8 h-8" />,
+      title: "Rework Reduction Programs",
+      description:
+        "Root cause analysis of welding defects and implementation of corrective actions to reduce rework costs.",
+    },
+    {
+      icon: <Flame className="w-8 h-8" />,
+      title: "Welder Training Programs",
+      description:
+        "Hands-on training for welders across various processes (SMAW, GMAW, GTAW, SAW, FCAW) and materials.",
+    },
+    {
+      icon: <CheckCircle2 className="w-8 h-8" />,
+      title: "Code Compliance Support",
+      description:
+        "Guidance on international welding codes and standards for reliable fabrication control.",
     },
   ];
 
-  const standards = [
-    {
-      code: "ASME Section IX",
-      description: "Welding, Brazing, and Fusing Qualifications",
-    },
-    {
-      code: "AWS D1.1",
-      description: "Structural Welding Code - Steel",
-    },
-    {
-      code: "API 1104",
-      description: "Welding of Pipelines and Related Facilities",
-    },
-    {
-      code: "ISO 9606",
-      description: "Qualification Testing of Welders",
-    },
-    {
-      code: "ISO 15614",
-      description: "Specification and Qualification of Welding Procedures",
-    },
-  ];
-
-  const processes = [
-    "SMAW - Stick Welding",
-    "GTAW/TIG - Tungsten Inert Gas",
-    "GMAW/MIG - Metal Inert Gas",
-    "FCAW - Flux-Cored Arc Welding",
-    "SAW - Submerged Arc Welding",
+  const outcomes = [
+    "Weld consistency through qualified welders and approved procedures",
+    "Lower rework costs via defect prevention and root cause analysis",
+    "Project confidence with documented welder qualifications",
+    "Code alignment ensuring client and regulatory acceptance",
+    "Fabrication control through inspection and audit programs",
   ];
 
   return (
@@ -112,175 +75,139 @@ export default function WeldingServicesPage() {
         <div className="relative z-10 h-full text-white flex items-center">
           <div className="p-4 md:p-12 space-y-6 max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-              Welding Services
+              Welding Training, Certification & Technical Services
             </h1>
             <p className="text-lg md:text-2xl max-w-3xl leading-relaxed">
-              Training, qualification, and procedure development for welding
-              excellence
+              Welder qualification, defect analysis, WPS/PQR development, and
+              code compliance for reliable fabrication
             </p>
           </div>
         </div>
       </section>
 
-      {/* Service Offerings */}
+      {/* Overview */}
       <section className="px-4 md:px-8 space-y-8">
-        <div className="max-w-6xl mx-auto space-y-8">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
-              Comprehensive Welding Services
-            </h2>
-            <p className="text-lg text-black/70 max-w-3xl mx-auto">
-              From training to qualification and technical support
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {services.map((service, index) => (
-              <Card key={index} className="border border-bes-primary/20">
-                <CardBody className="p-8 space-y-4">
-                  <div className="p-4 rounded-full bg-bes-primary text-white w-fit">
-                    {service.icon}
-                  </div>
-
-                  <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-bes-primary">
-                      {service.title}
-                    </h3>
-                    <p className="text-black/70 leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  <ul className="space-y-2 pt-3 border-t border-bes-primary/10">
-                    {service.details.map((detail, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-bes-accent mt-0.5 flex-shrink-0" />
-                        <span className="text-black/70">{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardBody>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Welding Processes */}
-      <section className="px-4 md:px-8 py-12 bg-secondary-50 rounded-3xl">
-        <div className="max-w-5xl mx-auto space-y-8">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
-              Welding Processes Covered
-            </h2>
-            <p className="text-lg text-black/70">
-              Training and qualification for all major welding processes
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {processes.map((process, index) => (
-              <Card key={index} className="border border-bes-primary/20">
-                <CardBody className="p-6 flex items-center gap-4">
-                  <Flame className="w-8 h-8 text-bes-primary flex-shrink-0" />
-                  <p className="text-black/70 font-medium">{process}</p>
-                </CardBody>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Standards & Codes */}
-      <section className="px-4 md:px-8 space-y-8">
-        <div className="max-w-6xl mx-auto space-y-8">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
-              Relevant Standards & Codes
-            </h2>
-            <p className="text-lg text-black/70 max-w-3xl mx-auto">
-              Our services align with internationally recognized welding codes
-              and standards
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {standards.map((standard, index) => (
-              <Card
-                key={index}
-                className="border border-bes-primary/20 hover:border-bes-primary transition-all duration-300"
-              >
-                <CardBody className="p-6 flex items-start gap-4">
-                  <FileText className="w-8 h-8 text-bes-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-bold text-bes-primary">
-                      {standard.code}
-                    </h3>
-                    <p className="text-sm text-black/70 mt-1">
-                      {standard.description}
-                    </p>
-                  </div>
-                </CardBody>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose BES */}
-      <section className="px-4 md:px-8 py-12 bg-bes-accent/10 rounded-3xl">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-bes-primary text-center">
-            Why Choose BES for Welding Services
+        <div className="max-w-5xl mx-auto space-y-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
+            Comprehensive Welding Services
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <p className="text-lg text-black/70 leading-relaxed">
+            BESCERT provides welder qualification testing, procedure review and
+            development, technical inspections, and root cause analysis per
+            international codes. Our services reduce defects, ensure fabrication
+            reliability, and maintain code compliance for projects across
+            manufacturing, oil & gas, and EPC sectors.
+          </p>
+        </div>
+      </section>
+
+      {/* Services Offered */}
+      <section className="px-4 md:px-8 py-12 bg-secondary-50 rounded-3xl">
+        <div className="max-w-6xl mx-auto space-y-8">
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
+            Services Offered
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {servicesOffered.map((service, index) => (
+              <Card key={index} className="border border-bes-primary/20">
+                <CardBody className="p-6 space-y-4">
+                  <div className="p-3 rounded-full bg-bes-primary text-white w-fit">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-bes-primary">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-black/70 leading-relaxed">
+                    {service.description}
+                  </p>
+                </CardBody>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Outcomes */}
+      <section className="px-4 md:px-8 space-y-8">
+        <div className="max-w-5xl mx-auto space-y-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
+            Business Outcomes
+          </h2>
+
+          <Card className="border border-bes-primary/20">
+            <CardBody className="p-8">
+              <ul className="space-y-3">
+                {outcomes.map((outcome, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-bes-accent shrink-0 mt-0.5" />
+                    <span className="text-lg text-black/70">{outcome}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardBody>
+          </Card>
+        </div>
+      </section>
+
+      {/* Digital Integration */}
+      <section className="px-4 md:px-8 space-y-8">
+        <div className="max-w-5xl mx-auto space-y-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-bes-primary text-center">
+            Digital Tracking Integrated
+          </h2>
+
+          <p className="text-lg text-black/70 text-center max-w-3xl mx-auto leading-relaxed">
+            Welder qualifications, procedure records, inspection reports, and
+            corrective actions are tracked digitally with full traceability and
+            audit readiness. Mobile apps enable field inspections with instant
+            NCR logging.
+          </p>
+
+          <div className="text-center pt-4">
+            <Link href="/services/digital">
+              <Button
+                size="lg"
+                variant="bordered"
+                className="border-2 border-bes-primary text-bes-primary hover:bg-bes-primary hover:text-white font-semibold"
+              >
+                Learn About Digital Systems
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Code Compliance */}
+      <section className="px-4 md:px-8 py-12 bg-secondary-50 rounded-3xl">
+        <div className="max-w-5xl mx-auto space-y-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-bes-primary text-center">
+            International Code Compliance
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6 text-center">
             <Card className="border border-bes-primary/20">
-              <CardBody className="p-6 space-y-3">
-                <h3 className="text-lg font-bold text-bes-primary">
-                  Experienced Instructors
-                </h3>
-                <p className="text-sm text-black/70">
-                  Our trainers are certified welding inspectors (CWI) and
-                  qualified welding supervisors with decades of industry
-                  experience.
+              <CardBody className="p-6">
+                <h3 className="text-xl font-bold text-bes-primary">ASME</h3>
+                <p className="text-sm text-black/70 mt-2">
+                  ASME Section IX welding qualifications
                 </p>
               </CardBody>
             </Card>
-
             <Card className="border border-bes-primary/20">
-              <CardBody className="p-6 space-y-3">
-                <h3 className="text-lg font-bold text-bes-primary">
-                  Code Compliance
-                </h3>
-                <p className="text-sm text-black/70">
-                  All procedures and qualifications strictly follow applicable
-                  codes (ASME, AWS, API, ISO) for acceptance by clients and
-                  regulatory bodies.
+              <CardBody className="p-6">
+                <h3 className="text-xl font-bold text-bes-primary">AWS</h3>
+                <p className="text-sm text-black/70 mt-2">
+                  AWS D1.1, D1.6 structural welding codes
                 </p>
               </CardBody>
             </Card>
-
             <Card className="border border-bes-primary/20">
-              <CardBody className="p-6 space-y-3">
-                <h3 className="text-lg font-bold text-bes-primary">
-                  Practical Approach
-                </h3>
-                <p className="text-sm text-black/70">
-                  Hands-on training with real welding equipment and
-                  project-based scenarios that mirror actual work conditions.
-                </p>
-              </CardBody>
-            </Card>
-
-            <Card className="border border-bes-primary/20">
-              <CardBody className="p-6 space-y-3">
-                <h3 className="text-lg font-bold text-bes-primary">
-                  Documentation Support
-                </h3>
-                <p className="text-sm text-black/70">
-                  Complete documentation packages including WPS, PQR, welder
-                  qualification records, and continuity logs.
+              <CardBody className="p-6">
+                <h3 className="text-xl font-bold text-bes-primary">ISO</h3>
+                <p className="text-sm text-black/70 mt-2">
+                  ISO 9606, ISO 15614 welder/procedure qualifications
                 </p>
               </CardBody>
             </Card>
@@ -292,10 +219,11 @@ export default function WeldingServicesPage() {
       <section className="px-4 md:px-8 py-16 bg-bes-primary rounded-3xl">
         <div className="max-w-4xl mx-auto text-center space-y-6 text-white">
           <h2 className="text-3xl md:text-5xl font-bold">
-            Need Welding Services?
+            Ready to Improve Welding Quality?
           </h2>
           <p className="text-lg md:text-xl opacity-90">
-            Contact us for training, qualification testing, or technical support
+            Let's discuss welder qualification, procedure development, and
+            inspection support for your projects
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center pt-4">
             <Link href="/contact">

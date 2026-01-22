@@ -1,64 +1,101 @@
 "use client";
 
-import { Button } from "@heroui/react";
-import { Building2, Factory, Zap, Wrench, Hammer } from "lucide-react";
+import { Card, CardBody } from "@heroui/react";
+import { Factory, Zap, Wrench, Droplet, Briefcase } from "lucide-react";
 
-const IndustriesServed = () => {
+export default function IndustriesServed() {
   const industries = [
-    { name: "Oil & Gas", icon: <Zap className="w-6 h-6" /> },
-    { name: "Manufacturing", icon: <Factory className="w-6 h-6" /> },
-    { name: "EPC & Construction", icon: <Building2 className="w-6 h-6" /> },
-    { name: "Power & Energy", icon: <Zap className="w-6 h-6" /> },
-    { name: "Engineering & Fabrication", icon: <Wrench className="w-6 h-6" /> },
+    {
+      icon: <Factory className="w-10 h-10" />,
+      title: "Manufacturing",
+      description:
+        "ISO 9001/14001/45001, process control, supplier management, and continuous improvement.",
+    },
+    {
+      icon: <Wrench className="w-10 h-10" />,
+      title: "Engineering & Fabrication",
+      description:
+        "API Q1, welding qualifications, NDT services, and technical compliance.",
+    },
+    {
+      icon: <Zap className="w-10 h-10" />,
+      title: "EPC Contractors",
+      description:
+        "Project-based systems, inspection support, audit readiness, and digital tracking.",
+    },
+    {
+      icon: <Droplet className="w-10 h-10" />,
+      title: "Oil & Gas",
+      description:
+        "API compliance, technical audits, personnel certification, and reliability programs.",
+    },
+    {
+      icon: <Briefcase className="w-10 h-10" />,
+      title: "Service Industries",
+      description:
+        "Management systems, operational excellence, compliance programs, and performance improvement.",
+    },
   ];
 
   return (
-    <section className="flex flex-col gap-8 py-12">
-      <div className="flex flex-col gap-4 text-center max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-bold">Industries We Serve</h2>
-        <p className="text-lg text-black/60">
-          Trusted by organizations across critical industrial sectors
-        </p>
-      </div>
+    <section className="px-4 md:px-8 space-y-8">
+      <div className="max-w-6xl mx-auto space-y-8">
+        <div className="text-center space-y-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
+            Industries We Serve
+          </h2>
+          <p className="text-lg text-black/70 max-w-3xl mx-auto">
+            Sector-specific compliance solutions for PAN-India and global
+            operations.
+          </p>
+        </div>
 
-      <div className="flex flex-wrap justify-center gap-4 mt-8">
-        {industries.map((industry, index) => (
-          <div
-            key={index}
-            className="flex items-center gap-3 px-6 py-4 rounded-full bg-white border-2 border-bes-primary/20 hover:border-bes-primary hover:bg-bes-primary/5 transition-all w-full md:w-auto"
-          >
-            <div className="text-bes-primary">{industry.icon}</div>
-            <span className="font-semibold text-gray-800">{industry.name}</span>
-          </div>
-        ))}
-      </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {industries.slice(0, -1).map((industry, index) => (
+            <Card key={index} className="border border-bes-primary/20">
+              <CardBody className="p-6 space-y-4">
+                <div className="p-4 rounded-full bg-bes-primary text-white w-fit">
+                  {industry.icon}
+                </div>
+                <h3 className="text-xl font-bold text-bes-primary">
+                  {industry.title}
+                </h3>
+                <p className="text-sm text-black/70 leading-relaxed">
+                  {industry.description}
+                </p>
+              </CardBody>
+            </Card>
+          ))}
+        </div>
 
-      {/* Final CTA integrated */}
-      <div className="flex flex-col gap-6 items-center mt-12 p-12 rounded-3xl bg-linear-to-r from-bes-primary to-bes-primary-light text-white">
-        <h2 className="text-3xl md:text-5xl font-bold text-center">
-          Ready to Build Systems That Grow Your Business?
-        </h2>
-        <p className="text-xl text-center text-white/90">
-          From compliance to control. From control to growth.
-        </p>
-        <div className="flex flex-col md:flex-row gap-4 mt-4">
-          <Button
-            size="lg"
-            className="bg-white text-bes-primary font-semibold text-lg px-8"
-          >
-            Request a Consultation
-          </Button>
-          <Button
-            size="lg"
-            variant="bordered"
-            className="border-2 border-white text-white hover:bg-white/10 font-semibold text-lg px-8"
-          >
-            Talk to a Technical Expert
-          </Button>
+        {/* Service Industries - Full Width */}
+        <Card className="border border-bes-primary/20">
+          <CardBody className="p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
+            <div className="p-4 rounded-full bg-bes-primary text-white">
+              {industries[4].icon}
+            </div>
+            <div className="space-y-2 text-center md:text-left">
+              <h3 className="text-xl font-bold text-bes-primary">
+                {industries[4].title}
+              </h3>
+              <p className="text-sm text-black/70 leading-relaxed">
+                {industries[4].description}
+              </p>
+            </div>
+          </CardBody>
+        </Card>
+
+        <div className="text-center pt-4">
+          <p className="text-base text-black/70 max-w-2xl mx-auto leading-relaxed">
+            Serving organizations across{" "}
+            <strong className="text-bes-primary">India</strong> (Chennai,
+            Trichy, Coimbatore, PAN-India) and{" "}
+            <strong className="text-bes-primary">international markets</strong>{" "}
+            including Nepal, Singapore, Malaysia, KSA, UAE, Kuwait, Qatar, and
+            Bahrain.
+          </p>
         </div>
       </div>
     </section>
   );
-};
-
-export default IndustriesServed;
+}

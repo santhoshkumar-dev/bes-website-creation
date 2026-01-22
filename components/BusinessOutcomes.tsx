@@ -1,54 +1,77 @@
 "use client";
 
-import {
-  TrendingUp,
-  Award,
-  Clock,
-  Users,
-  DollarSign,
-  ShieldCheck,
-} from "lucide-react";
+import { Card, CardBody } from "@heroui/react";
+import { TrendingUp, Shield, CheckCircle2, Zap } from "lucide-react";
 
-const BusinessOutcomes = () => {
+export default function BusinessOutcomes() {
   const outcomes = [
     {
-      icon: <TrendingUp className="w-8 h-8" />,
-      label: "Improved productivity",
+      icon: <Shield className="w-10 h-10" />,
+      title: "Control",
+      description:
+        "Processes operate consistently with clear accountability and traceability.",
     },
-    { icon: <Award className="w-8 h-8" />, label: "Consistent quality" },
-    { icon: <Clock className="w-8 h-8" />, label: "On-time delivery" },
-    { icon: <Users className="w-8 h-8" />, label: "Improved employee morale" },
     {
-      icon: <DollarSign className="w-8 h-8" />,
-      label: "Reduced rejection and rework costs",
+      icon: <CheckCircle2 className="w-10 h-10" />,
+      title: "Consistency",
+      description:
+        "Predictable outputs, reduced variation, and reliable performance across operations.",
     },
-    { icon: <ShieldCheck className="w-8 h-8" />, label: "Lower audit risk" },
+    {
+      icon: <Zap className="w-10 h-10" />,
+      title: "Confidence",
+      description:
+        "Audit-ready systems that eliminate surprises and strengthen stakeholder trust.",
+    },
+    {
+      icon: <TrendingUp className="w-10 h-10" />,
+      title: "Growth",
+      description:
+        "Sustainable business improvement through productivity gains and risk reduction.",
+    },
   ];
 
   return (
-    <section className="flex flex-col gap-8 py-12">
-      <div className="flex flex-col gap-4 text-center max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-bold">
-          Measurable Business Results
-        </h2>
-        <p className="text-lg text-black/60">
-          Real outcomes that impact your bottom line and operational excellence
-        </p>
-      </div>
+    <section className="px-4 md:px-8 py-12 bg-default-50 rounded-3xl">
+      <div className="max-w-6xl mx-auto space-y-8">
+        <div className="text-center space-y-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
+            Business Outcomes
+          </h2>
+          <p className="text-lg text-black/70 max-w-3xl mx-auto">
+            Certification isn't the end goal. It's a foundation for measurable
+            improvement.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-        {outcomes.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-linear-to-br from-bes-primary to-bes-primary-light text-white hover:scale-105 transition-transform"
-          >
-            <div className="p-4 rounded-full bg-white/20">{item.icon}</div>
-            <p className="text-center font-semibold">{item.label}</p>
-          </div>
-        ))}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {outcomes.map((outcome, index) => (
+            <Card key={index} className="border border-bes-primary/20">
+              <CardBody className="p-6 space-y-4 text-center">
+                <div className="p-4 rounded-full bg-bes-primary text-white w-fit mx-auto">
+                  {outcome.icon}
+                </div>
+                <h3 className="text-xl font-bold text-bes-primary">
+                  {outcome.title}
+                </h3>
+                <p className="text-sm text-black/70 leading-relaxed">
+                  {outcome.description}
+                </p>
+              </CardBody>
+            </Card>
+          ))}
+        </div>
+
+        <div className="text-center pt-4">
+          <p className="text-base text-black/70 max-w-3xl mx-auto leading-relaxed">
+            <strong className="text-bes-primary">
+              Our measure of success:
+            </strong>{" "}
+            Improved productivity, reduced defects, faster delivery, stronger
+            morale, and lower operational costs.
+          </p>
+        </div>
       </div>
     </section>
   );
-};
-
-export default BusinessOutcomes;
+}

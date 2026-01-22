@@ -1,5 +1,5 @@
-import Hero from "../components/Hero";
-import About from "../components/About";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
 import Cataglog from "../components/Cataglog";
 import HowWeWork from "@/components/HowWeWork";
 import DigitalEnablement from "@/components/DigitalEnablement";

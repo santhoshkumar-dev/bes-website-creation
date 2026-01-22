@@ -7,115 +7,74 @@ import {
   Shield,
   TrendingUp,
   CheckCircle2,
-  Award,
+  Zap,
 } from "lucide-react";
 import Link from "next/link";
 
-export default function WhyBESPage() {
+export default function WhyBESCERTPage() {
   const differentiators = [
     {
       icon: <Target className="w-12 h-12" />,
       title: "80% Implementation | 20% Planning",
       description:
-        "We don't create documents that sit on shelves. We build systems your teams use daily to control processes and improve performance.",
-      details: [
-        "Practical, hands-on implementation",
-        "On-site training and support",
-        "Process integration, not paperwork",
-        "Measurable operational impact",
-      ],
+        "Shop-floor systems your teams use daily—not paperwork exercises.",
     },
     {
       icon: <Smartphone className="w-12 h-12" />,
-      title: "Digital-First Approach",
+      title: "Digital Integration Mandatory",
       description:
-        "Paper-based systems cannot compete. We digitize compliance with cloud platforms, mobile apps, and real-time dashboards.",
-      details: [
-        "Cloud-based management software",
-        "Mobile inspection and audit apps",
-        "Real-time KPI dashboards",
-        "Automated workflows and alerts",
-      ],
+        "Cloud platforms, mobile apps, dashboards, and real-time reporting included in every service.",
     },
     {
       icon: <Shield className="w-12 h-12" />,
-      title: "Audit-Ready at All Times",
+      title: "One-Year Assurance Included",
       description:
-        "Our consultants are experienced auditors. We know what certification bodies look for, eliminating audit surprises.",
-      details: [
-        "Auditor-led consulting approach",
-        "Zero-nonconformity mindset",
-        "Continuous audit readiness",
-        "NC closure support and verification",
-      ],
+        "Continuous support, audit handholding, and digital system stabilization post-implementation.",
     },
     {
       icon: <TrendingUp className="w-12 h-12" />,
-      title: "Performance-Driven Results",
+      title: "Business Outcomes Focused",
       description:
-        "We measure success by business outcomes—productivity, quality, delivery, morale, and cost reduction—not just certificates.",
-      details: [
-        "KPI tracking and improvement",
-        "Root-cause problem solving",
-        "Data-driven decision making",
-        "Continuous improvement culture",
-      ],
+        "Productivity gains, risk reduction, error elimination, and sustainable growth—not just certificates.",
     },
   ];
 
-  const comparisons = [
+  const valueDelivered = [
     {
-      aspect: "Focus",
-      traditional: "Document creation for audit day",
-      bes: "Systems used daily in operations",
-    },
-    {
-      aspect: "Tools",
-      traditional: "Paper files and spreadsheets",
-      bes: "Digital platforms and mobile apps",
-    },
-    {
-      aspect: "Integration",
-      traditional: "Separate from daily work",
-      bes: "Embedded in business processes",
-    },
-    {
-      aspect: "Audit Readiness",
-      traditional: "Preparation required before audits",
-      bes: "Always audit-ready",
-    },
-    {
-      aspect: "Value",
-      traditional: "Certificate on the wall",
-      bes: "Measurable business improvement",
-    },
-  ];
-
-  const results = [
-    {
-      icon: <CheckCircle2 className="w-8 h-8" />,
-      title: "Reduced Audit Failures",
-      stat: "Zero-NC",
+      icon: <Zap className="w-8 h-8" />,
+      title: "Error Elimination",
       description:
-        "Target for certification audits through rigorous preparation",
+        "Digital mistake-proofing, automated workflows, and process controls reduce defects and rework.",
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
-      title: "Improved Efficiency",
-      stat: "20-30%",
-      description: "Productivity gains through process optimization",
+      title: "Resource Optimization",
+      description:
+        "Efficient use of time, materials, and personnel through streamlined processes and data-driven decisions.",
+    },
+    {
+      icon: <CheckCircle2 className="w-8 h-8" />,
+      title: "Best Practices Embedded",
+      description:
+        "International standards translated into practical, shop-floor operations with clear accountability.",
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
-      title: "Faster Response",
-      stat: "Real-Time",
-      description: "Instant access to compliance data and performance metrics",
+      title: "Real-Time Visibility",
+      description:
+        "Dashboards and mobile apps provide instant access to performance metrics, audit status, and compliance data.",
     },
     {
-      icon: <Award className="w-8 h-8" />,
-      title: "Higher Quality",
-      stat: "50%+",
-      description: "Reduction in defects and rework",
+      icon: <Shield className="w-8 h-8" />,
+      title: "Risk Reduction",
+      description:
+        "Proactive identification and mitigation of quality, safety, and compliance risks.",
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "Morale & Engagement",
+      description:
+        "Clear processes, fair evaluations, and competency development improve team confidence and satisfaction.",
     },
   ];
 
@@ -135,42 +94,27 @@ export default function WhyBESPage() {
         <div className="relative z-10 h-full text-white flex items-center">
           <div className="p-4 md:p-12 space-y-6 max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-              Why Choose BES
+              Why BESCERT
             </h1>
             <p className="text-lg md:text-2xl max-w-3xl leading-relaxed">
-              Practical implementation, digital systems, and measurable business
-              results
+              Assuring improvement through systems that reduce errors, optimize
+              resources, and deliver measurable business value
             </p>
           </div>
         </div>
       </section>
 
-      {/* Core Philosophy */}
-      <section className="px-4 md:px-8 space-y-8">
-        <div className="max-w-5xl mx-auto space-y-6 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
-            Our Core Philosophy
-          </h2>
-          <div className="bg-gradient-to-br from-bes-primary to-bes-primary-light text-white p-8 md:p-12 rounded-3xl space-y-4">
-            <p className="text-xl md:text-2xl font-bold">
-              Compliance Should Improve Real Performance
-            </p>
-            <p className="text-lg opacity-95 leading-relaxed">
-              ISO, API, and industry standards are practical tools, not
-              paperwork exercises. When implemented correctly, they become
-              competitive advantages that drive productivity, quality, and
-              profitability.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Key Differentiators */}
+      {/* Core Differentiators */}
       <section className="px-4 md:px-8 space-y-8">
         <div className="max-w-6xl mx-auto space-y-8">
-          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
-            What Sets BES Apart
-          </h2>
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
+              What Sets BESCERT Apart
+            </h2>
+            <p className="text-lg text-black/70 max-w-3xl mx-auto">
+              We don't just certify—we build systems that grow businesses
+            </p>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {differentiators.map((diff, index) => (
@@ -179,24 +123,12 @@ export default function WhyBESPage() {
                   <div className="p-4 rounded-full bg-bes-primary text-white w-fit">
                     {diff.icon}
                   </div>
-
-                  <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-bes-primary">
-                      {diff.title}
-                    </h3>
-                    <p className="text-black/70 leading-relaxed">
-                      {diff.description}
-                    </p>
-                  </div>
-
-                  <ul className="space-y-2 pt-3 border-t border-bes-primary/10">
-                    {diff.details.map((detail, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm">
-                        <span className="text-bes-accent mt-0.5">✓</span>
-                        <span className="text-black/70">{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <h3 className="text-2xl font-bold text-bes-primary">
+                    {diff.title}
+                  </h3>
+                  <p className="text-black/70 leading-relaxed">
+                    {diff.description}
+                  </p>
                 </CardBody>
               </Card>
             ))}
@@ -204,78 +136,32 @@ export default function WhyBESPage() {
         </div>
       </section>
 
-      {/* Comparison Table */}
+      {/* Value Delivered */}
       <section className="px-4 md:px-8 py-12 bg-secondary-50 rounded-3xl">
-        <div className="max-w-5xl mx-auto space-y-8">
-          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
-            Traditional Approach vs. BES Approach
-          </h2>
-
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b-2 border-bes-primary">
-                  <th className="py-4 px-4 text-left text-bes-primary font-bold">
-                    Aspect
-                  </th>
-                  <th className="py-4 px-4 text-left text-red-700 font-bold">
-                    Traditional Compliance
-                  </th>
-                  <th className="py-4 px-4 text-left text-green-700 font-bold">
-                    BES Approach
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisons.map((comp, index) => (
-                  <tr
-                    key={index}
-                    className="border-b border-bes-primary/20 hover:bg-white transition-colors"
-                  >
-                    <td className="py-4 px-4 font-semibold text-bes-primary">
-                      {comp.aspect}
-                    </td>
-                    <td className="py-4 px-4 text-black/70">
-                      {comp.traditional}
-                    </td>
-                    <td className="py-4 px-4 text-black/70 font-medium">
-                      {comp.bes}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Results */}
-      <section className="px-4 md:px-8 space-y-8">
         <div className="max-w-6xl mx-auto space-y-8">
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
-              Typical Results
+              Value We Deliver
             </h2>
             <p className="text-lg text-black/70 max-w-3xl mx-auto">
-              Organizations that implement BES systems see measurable
-              improvements
+              Measurable improvements across productivity, quality, safety, and
+              cost
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
-            {results.map((result, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {valueDelivered.map((value, index) => (
               <Card key={index} className="border border-bes-primary/20">
-                <CardBody className="p-6 space-y-3 text-center">
-                  <div className="p-4 rounded-full bg-bes-primary text-white w-fit mx-auto">
-                    {result.icon}
-                  </div>
-                  <div className="text-3xl font-bold text-bes-primary">
-                    {result.stat}
+                <CardBody className="p-6 space-y-4">
+                  <div className="p-3 rounded-full bg-bes-primary text-white w-fit">
+                    {value.icon}
                   </div>
                   <h3 className="text-lg font-bold text-bes-primary">
-                    {result.title}
+                    {value.title}
                   </h3>
-                  <p className="text-sm text-black/70">{result.description}</p>
+                  <p className="text-sm text-black/70 leading-relaxed">
+                    {value.description}
+                  </p>
                 </CardBody>
               </Card>
             ))}
@@ -283,21 +169,51 @@ export default function WhyBESPage() {
         </div>
       </section>
 
-      {/* Testimonial-Style Quote */}
-      <section className="px-4 md:px-8 py-12 bg-bes-accent/10 rounded-3xl">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div className="text-6xl text-bes-primary opacity-20">"</div>
-          <p className="text-xl md:text-2xl text-bes-primary font-semibold leading-relaxed">
-            BES doesn't just help us pass audits. They've built systems that
-            make our operations better—fewer errors, faster delivery, and
-            happier teams.
-          </p>
-          <div className="text-6xl text-bes-primary opacity-20 rotate-180">
-            "
+      {/* Client Commitment */}
+      <section className="px-4 md:px-8 space-y-8">
+        <div className="max-w-5xl mx-auto space-y-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
+            Our Client Commitment
+          </h2>
+
+          <div className="space-y-4">
+            <Card className="border border-bes-primary/20">
+              <CardBody className="p-8">
+                <h3 className="text-xl font-bold text-bes-primary mb-3">
+                  100% Satisfaction Focus
+                </h3>
+                <p className="text-black/70 leading-relaxed">
+                  We measure success by your success—improved operations, faster
+                  audits, stronger compliance, and sustainable growth.
+                </p>
+              </CardBody>
+            </Card>
+
+            <Card className="border border-bes-primary/20">
+              <CardBody className="p-8">
+                <h3 className="text-xl font-bold text-bes-primary mb-3">
+                  Long-Term Partnership
+                </h3>
+                <p className="text-black/70 leading-relaxed">
+                  One-year assurance, continuous support, and ongoing guidance
+                  ensure your systems evolve with your business without losing
+                  audit readiness.
+                </p>
+              </CardBody>
+            </Card>
+
+            <Card className="border border-bes-primary/20">
+              <CardBody className="p-8">
+                <h3 className="text-xl font-bold text-bes-primary mb-3">
+                  Ethical & Transparent Practices
+                </h3>
+                <p className="text-black/70 leading-relaxed">
+                  Honest guidance, clear pricing, and transparent processes—no
+                  hidden fees, no overselling, no surprises.
+                </p>
+              </CardBody>
+            </Card>
           </div>
-          <p className="text-sm text-black/60">
-            — Typical feedback from BES clients
-          </p>
         </div>
       </section>
 
@@ -305,7 +221,7 @@ export default function WhyBESPage() {
       <section className="px-4 md:px-8 py-16 bg-bes-primary rounded-3xl">
         <div className="max-w-4xl mx-auto text-center space-y-6 text-white">
           <h2 className="text-3xl md:text-5xl font-bold">
-            Experience the BES Difference
+            Experience the BESCERT Difference
           </h2>
           <p className="text-lg md:text-xl opacity-90">
             Let's discuss how we can transform your compliance approach into a
@@ -326,7 +242,7 @@ export default function WhyBESPage() {
                 variant="bordered"
                 className="border-2 border-white text-white hover:bg-white/10 font-semibold text-lg px-8"
               >
-                Learn More About BES
+                Learn More About BESCERT
               </Button>
             </Link>
           </div>

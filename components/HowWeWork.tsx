@@ -1,96 +1,92 @@
-import {
-  Award,
-  Shield,
-  Target,
-  Database,
-  CheckCircle,
-  BarChart3,
-} from "lucide-react";
+"use client";
 
-const HowWeWork = () => {
-  const values = [
+import { Card, CardBody } from "@heroui/react";
+import { CheckCircle2, Cog, LineChart, Headphones } from "lucide-react";
+
+export default function HowWeWork() {
+  const workPhases = [
     {
-      title: "End-to-end certification readiness",
-      icon: <Award />,
+      icon: <CheckCircle2 className="w-10 h-10" />,
+      title: "Assessment & Planning",
       description:
-        "Complete support from initial assessment through certification audit and beyond, ensuring your organization is fully prepared at every stage.",
+        "We assess your current maturity and design a practical roadmap focused on your business priorities.",
+      percentage: "20%",
     },
     {
-      title: "Auditor-led consulting approach",
-      icon: <Shield />,
+      icon: <Cog className="w-10 h-10" />,
+      title: "Implementation on Shop Floor",
       description:
-        "Our consultants are experienced auditors who understand exactly what certification bodies look for, eliminating surprises and nonconformities.",
+        "Shop-floor integration, digital enablement, process control—systems your teams use daily.",
+      percentage: "80%",
     },
     {
-      title: "Practical, site-based implementation",
-      icon: <Target />,
+      icon: <LineChart className="w-10 h-10" />,
+      title: "Audit Readiness & Certification",
       description:
-        "We work on-site with your teams to implement systems that integrate with your actual operations, not theoretical documentation.",
+        "Internal audits, gap closure, and coordination with accredited certification bodies.",
     },
     {
-      title: "Digital documentation and reporting systems",
-      icon: <Database />,
+      icon: <Headphones className="w-10 h-10" />,
+      title: "One-Year Assurance",
       description:
-        "Cloud-based platforms and mobile apps ensure your compliance documentation is accessible, current, and audit-ready at all times.",
-    },
-    {
-      title: "Zero-nonconformity audit mindset",
-      icon: <CheckCircle />,
-      description:
-        "Our rigorous approach aims for perfect audits through comprehensive preparation, internal audits, and continuous improvement.",
-    },
-    {
-      title: "KPI dashboards for management review",
-      icon: <BarChart3 />,
-      description:
-        "Real-time performance metrics and analytics transform compliance data into actionable business intelligence for leadership decisions.",
+        "Continuous support, surveillance audit assistance, digital system stabilization, and performance guidance.",
+      highlight: true,
     },
   ];
 
   return (
-    <section className="flex justify-between flex-col md:flex-row py-12 md:gap-18">
-      <div className="flex flex-col gap-4 basis-1/3">
-        <h2 className="text-4xl md:text-6xl font-bold">
-          Why Organizations Choose BES
-        </h2>
-
-        <p className="text-lg text-black/60">
-          Practical implementation backed by certified expertise
-        </p>
-
-        <div className="h-[700px] hidden md:block">
-          <img
-            src="hero.jpg"
-            alt="BES Certification Services"
-            className="w-full h-full object-cover rounded-2xl"
-          />
+    <section className="px-4 md:px-8 py-12 bg-secondary-50 rounded-3xl">
+      <div className="max-w-6xl mx-auto space-y-8">
+        <div className="text-center space-y-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
+            How We Work
+          </h2>
+          <p className="text-lg text-black/70 max-w-3xl mx-auto">
+            Our implementation model ensures systems work on the shop floor, not
+            just in files.
+          </p>
         </div>
-      </div>
 
-      <div className="flex flex-col justify-center py-4 gap-2 basis-1/2 divide-y divide-secondary-100 md:py-8">
-        {values.map((item, index) => (
-          <div
-            key={index}
-            className="flex gap-6 p-6 transition-all duration-300 hover:bg-secondary-50 group cursor-pointer"
-          >
-            <div>
-              <div className="p-4 rounded-full bg-bes-primary text-white transition-transform duration-300 group-hover:scale-110">
-                {item.icon}
-              </div>
-            </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {workPhases.map((phase, index) => (
+            <Card
+              key={index}
+              className={`border ${
+                phase.highlight
+                  ? "border-2 border-bes-accent bg-default-50"
+                  : "border-bes-primary/20"
+              }`}
+            >
+              <CardBody className="p-6 space-y-4">
+                <div className="flex items-start justify-between">
+                  <div className="p-3 rounded-full bg-bes-primary text-white">
+                    {phase.icon}
+                  </div>
+                  {phase.percentage && (
+                    <div className="text-2xl font-bold text-bes-accent">
+                      {phase.percentage}
+                    </div>
+                  )}
+                </div>
+                <h3 className="text-lg font-bold text-bes-primary">
+                  {phase.title}
+                </h3>
+                <p className="text-sm text-black/70 leading-relaxed">
+                  {phase.description}
+                </p>
+              </CardBody>
+            </Card>
+          ))}
+        </div>
 
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold transition-colors duration-300">
-                {item.title}
-              </h3>
-
-              <p className="text-black/60">{item.description}</p>
-            </div>
-          </div>
-        ))}
+        <div className="text-center pt-4">
+          <p className="text-base text-black/70 max-w-2xl mx-auto leading-relaxed">
+            <strong className="text-bes-primary">Our philosophy:</strong>{" "}
+            Documentation must support operations, not replace them. Digital
+            tools are mandatory for real-time visibility and control.
+          </p>
+        </div>
       </div>
     </section>
   );
-};
-
-export default HowWeWork;
+}

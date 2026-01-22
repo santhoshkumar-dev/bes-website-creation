@@ -1,61 +1,41 @@
 "use client";
 
 import { Card, CardBody, Button } from "@heroui/react";
-import { CheckCircle2, Target, Award, Users } from "lucide-react";
+import {
+  CheckCircle2,
+  Target,
+  Heart,
+  TrendingUp,
+  Users,
+  Award,
+} from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
-  const promises = [
+  const coreCommitments = [
     {
-      icon: <CheckCircle2 className="w-8 h-8" />,
+      icon: <Users className="w-10 h-10" />,
+      title: "People-First Philosophy",
+      description:
+        "Systems, processes, and competency programs built around people—80% understanding through practice, 20% theory.",
+    },
+    {
+      icon: <Target className="w-10 h-10" />,
       title: "Practical Implementation",
       description:
-        "We don't just create documentation. We build systems that are used daily by your teams to control processes and improve performance.",
+        "We don't just create documentation. We build systems that operate daily on the shop floor with digital enablement.",
     },
     {
-      icon: <Target className="w-8 h-8" />,
-      title: "Digital-First Approach",
+      icon: <TrendingUp className="w-10 h-10" />,
+      title: "Continuous Improvement",
       description:
-        "Management software, mobile apps, real-time dashboards, and cloud-based documentation for audit confidence and operational efficiency.",
+        "Focus on productivity, quality, safety, and growth—not just passing audits.",
     },
     {
-      icon: <Award className="w-8 h-8" />,
-      title: "Audit-Ready Systems",
+      icon: <Heart className="w-10 h-10" />,
+      title: "Long-Term Partnerships",
       description:
-        "Our systems are designed from an auditor's perspective, ensuring zero-surprise audits and smooth certification processes.",
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Performance-Driven Results",
-      description:
-        "We measure success through measurable improvements in productivity, quality, delivery, morale, and cost reduction.",
-    },
-  ];
-
-  const differentiators = [
-    {
-      title: "Paperwork Compliance",
-      subtitle: "Traditional Approach",
-      points: [
-        "Documentation for audit day only",
-        "Manual files and spreadsheets",
-        "Disconnected from daily operations",
-        "High audit failure risk",
-        "Limited performance insights",
-      ],
-      negative: true,
-    },
-    {
-      title: "Real Systems",
-      subtitle: "BES Approach",
-      points: [
-        "Systems used daily in operations",
-        "Digital platforms and mobile apps",
-        "Integrated with business processes",
-        "Audit-ready at all times",
-        "Measurable business outcomes",
-      ],
-      negative: false,
+        "One-year assurance, ongoing support, and commitment to your sustained success.",
     },
   ];
 
@@ -75,17 +55,17 @@ export default function AboutPage() {
         <div className="relative z-10 h-full text-white flex items-center">
           <div className="p-4 md:p-12 space-y-6 max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-              About BES Certification and Technical Services
+              About BESCERT
             </h1>
             <p className="text-lg md:text-2xl max-w-3xl leading-relaxed">
-              Building practical, digital, audit-ready management systems for
-              global industrial organizations
+              Building systems, processes, and people for productivity, quality,
+              safety, and growth
             </p>
           </div>
         </div>
       </section>
 
-      {/* Who We Are */}
+      {/* Who WeAre */}
       <section className="px-4 md:px-8 space-y-8">
         <div className="max-w-5xl mx-auto space-y-6">
           <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
@@ -94,17 +74,20 @@ export default function AboutPage() {
 
           <div className="space-y-4 text-lg text-black/70 leading-relaxed">
             <p>
-              BES Certification and Technical Services is a multidisciplinary
-              organization providing certification, consultancy, training,
-              inspection, and audit support services to industrial,
-              manufacturing, EPC, and oil & gas organizations worldwide.
+              <strong className="text-bes-primary text-xl">
+                BES Certification and Technical Services (BESCERT)
+              </strong>{" "}
+              delivers ISO consultancy, API compliance, welding and NDT
+              technical services, inspection, audit, and digital management
+              systems to manufacturing, engineering, EPC, oil & gas, and service
+              industries across India and global markets.
             </p>
 
             <p>
-              We deliver internationally compliant, audit-ready, and risk-based
-              management system solutions across Quality (ISO 9001), Environment
-              (ISO 14001), Occupational Health & Safety (ISO 45001), API Q1,
-              NDT, Welding, and Inspection disciplines.
+              Headquartered in <strong>Chennai, India</strong>, we bring over{" "}
+              <strong>28 years of collective experience</strong> in building
+              systems that improve real business performance—not just satisfy
+              audit requirements.
             </p>
 
             <p className="font-semibold text-bes-primary text-xl">
@@ -115,51 +98,26 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What Problems We Solve */}
+      {/* Core Commitments */}
       <section className="px-4 md:px-8 py-12 bg-secondary-50 rounded-3xl">
         <div className="max-w-6xl mx-auto space-y-8">
-          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
-            What Problems We Solve
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
+            Our Core Commitments
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {differentiators.map((item, index) => (
-              <Card
-                key={index}
-                className={`border-2 ${
-                  item.negative
-                    ? "border-red-200 bg-red-50/30"
-                    : "border-green-200 bg-green-50/30"
-                }`}
-              >
+          <div className="grid md:grid-cols-2 gap-6">
+            {coreCommitments.map((commitment, index) => (
+              <Card key={index} className="border border-bes-primary/20">
                 <CardBody className="p-8 space-y-4">
-                  <div>
-                    <p className="text-sm font-semibold text-black/60 uppercase tracking-wide">
-                      {item.subtitle}
-                    </p>
-                    <h3
-                      className={`text-2xl font-bold ${
-                        item.negative ? "text-red-700" : "text-green-700"
-                      }`}
-                    >
-                      {item.title}
-                    </h3>
+                  <div className="p-4 rounded-full bg-bes-primary text-white w-fit">
+                    {commitment.icon}
                   </div>
-
-                  <ul className="space-y-3">
-                    {item.points.map((point, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <span
-                          className={`mt-1 ${
-                            item.negative ? "text-red-600" : "text-green-600"
-                          }`}
-                        >
-                          {item.negative ? "✗" : "✓"}
-                        </span>
-                        <span className="text-black/70">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <h3 className="text-2xl font-bold text-bes-primary">
+                    {commitment.title}
+                  </h3>
+                  <p className="text-black/70 leading-relaxed">
+                    {commitment.description}
+                  </p>
                 </CardBody>
               </Card>
             ))}
@@ -167,29 +125,121 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* BES Promise */}
+      {/* What We Do */}
       <section className="px-4 md:px-8 space-y-8">
-        <div className="max-w-6xl mx-auto space-y-8">
-          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
-            The BES Promise
+        <div className="max-w-5xl mx-auto space-y-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
+            What We Do
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {promises.map((promise, index) => (
-              <Card key={index} className="border border-bes-primary/20">
-                <CardBody className="p-8 space-y-4">
-                  <div className="p-4 rounded-full bg-bes-primary text-white w-fit">
-                    {promise.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-bes-primary">
-                    {promise.title}
-                  </h3>
-                  <p className="text-black/70 leading-relaxed">
-                    {promise.description}
-                  </p>
-                </CardBody>
-              </Card>
-            ))}
+          <div className="space-y-6">
+            <Card className="border border-bes-primary/20">
+              <CardBody className="p-8">
+                <h3 className="text-xl font-bold text-bes-primary mb-4">
+                  ISO Management Systems
+                </h3>
+                <p className="text-black/70 leading-relaxed">
+                  End-to-end implementation of ISO 9001, 14001, 45001, 27001,
+                  and 17025 with digital tools, risk integration, and
+                  operational alignment.
+                </p>
+              </CardBody>
+            </Card>
+
+            <Card className="border border-bes-primary/20">
+              <CardBody className="p-8">
+                <h3 className="text-xl font-bold text-bes-primary mb-4">
+                  API Compliance & Technical Consultancy
+                </h3>
+                <p className="text-black/70 leading-relaxed">
+                  Oil & gas compliance via API Q1, MOC controls, supplier
+                  management, and audit readiness programs for fabricators and
+                  EPC contractors.
+                </p>
+              </CardBody>
+            </Card>
+
+            <Card className="border border-bes-primary/20">
+              <CardBody className="p-8">
+                <h3 className="text-xl font-bold text-bes-primary mb-4">
+                  NDT & Welding Services
+                </h3>
+                <p className="text-black/70 leading-relaxed">
+                  Training, certification, and technical support for
+                  non-destructive testing and welding personnel, procedures, and
+                  compliance programs.
+                </p>
+              </CardBody>
+            </Card>
+
+            <Card className="border border-bes-primary/20">
+              <CardBody className="p-8">
+                <h3 className="text-xl font-bold text-bes-primary mb-4">
+                  Digital Systems & Continuous Support
+                </h3>
+                <p className="text-black/70 leading-relaxed">
+                  Cloud platforms, mobile apps, KPI dashboards, and digital
+                  training systems integrated into all services for sustained
+                  operational control.
+                </p>
+              </CardBody>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Values */}
+      <section className="px-4 md:px-8 space-y-8">
+        <div className="max-w-5xl mx-auto space-y-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
+            Our Values
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="border border-bes-primary/20">
+              <CardBody className="p-6 space-y-3 text-center">
+                <div className="p-4 rounded-full bg-bes-primary text-white w-fit mx-auto">
+                  <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <h3 className="text-lg font-bold text-bes-primary">
+                  Integrity
+                </h3>
+                <p className="text-sm text-black/70">
+                  Ethical practices, transparency, and honest guidance in all
+                  interactions.
+                </p>
+              </CardBody>
+            </Card>
+
+            <Card className="border border-bes-primary/20">
+              <CardBody className="p-6 space-y-3 text-center">
+                <div className="p-4 rounded-full bg-bes-primary text-white w-fit mx-auto">
+                  <Award className="w-8 h-8" />
+                </div>
+                <h3 className="text-lg font-bold text-bes-primary">
+                  Excellence
+                </h3>
+                <p className="text-sm text-black/70">
+                  Commitment to quality, continuous improvement, and exceeding
+                  expectations.
+                </p>
+              </CardBody>
+            </Card>
+
+            <Card className="border border-bes-primary/20">
+              <CardBody className="p-6 space-y-3 text-center">
+                <div className="p-4 rounded-full bg-bes-primary text-white w-fit mx-auto">
+                  <Users className="w-8 h-8" />
+                </div>
+                <h3 className="text-lg font-bold text-bes-primary">
+                  Customer Focus
+                </h3>
+                <p className="text-sm text-black/70">
+                  100% satisfaction through real business improvement and
+                  sustained support.
+                </p>
+              </CardBody>
+            </Card>
           </div>
         </div>
       </section>
@@ -201,8 +251,8 @@ export default function AboutPage() {
             Ready to Build Real Systems?
           </h2>
           <p className="text-lg md:text-xl opacity-90">
-            Let's discuss how BES can transform your compliance approach into a
-            competitive advantage.
+            Let's discuss how BESCERT can transform your compliance approach
+            into a competitive advantage.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center pt-4">
             <Link href="/contact">

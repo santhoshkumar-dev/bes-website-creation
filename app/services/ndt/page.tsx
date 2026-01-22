@@ -3,115 +3,68 @@
 import { Card, CardBody, Button } from "@heroui/react";
 import {
   Microscope,
-  Eye,
-  Radio,
-  Waves,
-  GraduationCap,
+  CheckCircle2,
   Award,
+  Smartphone,
+  FileCheck,
+  Shield,
 } from "lucide-react";
 import Link from "next/link";
 
 export default function NDTServicesPage() {
-  const methods = [
+  const ndtMethods = [
+    { code: "RT", name: "Radiographic Testing", levels: "I / II" },
+    { code: "UT", name: "Ultrasonic Testing", levels: "I / II" },
+    { code: "MT", name: "Magnetic Particle Testing", levels: "I / II" },
+    { code: "PT", name: "Liquid Penetrant Testing", levels: "I / II" },
+    { code: "VT", name: "Visual Testing", levels: "I / II" },
+  ];
+
+  const servicesIncluded = [
     {
-      icon: <Eye className="w-8 h-8" />,
-      method: "PT",
-      title: "Penetrant Testing",
+      icon: <Award className="w-8 h-8" />,
+      title: "Field-Oriented Training",
       description:
-        "Liquid penetrant inspection for detecting surface-breaking defects in non-porous materials.",
-      applications: [
-        "Weld inspection",
-        "Crack detection",
-        "Porosity identification",
-      ],
+        "Practical, hands-on training programs aligned with international standards and industry requirements.",
+    },
+    {
+      icon: <Smartphone className="w-8 h-8" />,
+      title: "Digital Examination System",
+      description:
+        "Instant-result exams with full transparency, eliminating manual grading errors and providing immediate competency verification.",
+    },
+    {
+      icon: <FileCheck className="w-8 h-8" />,
+      title: "Compliance Verification",
+      description:
+        "Procedure guidance, technical audits, and alignment with code requirements for inspection programs.",
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: "Error-Free Reporting",
+      description:
+        "Digital inspection reports with automated calculations, photo documentation, and real-time validation.",
+    },
+    {
+      icon: <CheckCircle2 className="w-8 h-8" />,
+      title: "Personnel Certification Support",
+      description:
+        "Preparation and coordination with certification bodies for NDT personnel qualification.",
     },
     {
       icon: <Microscope className="w-8 h-8" />,
-      method: "MT",
-      title: "Magnetic Particle Testing",
+      title: "Technical Inspection Support",
       description:
-        "Electromagnetic inspection for surface and near-surface discontinuities in ferromagnetic materials.",
-      applications: [
-        "Welded joints",
-        "Forgings and castings",
-        "Surface crack detection",
-      ],
-    },
-    {
-      icon: <Radio className="w-8 h-8" />,
-      method: "RT",
-      title: "Radiographic Testing",
-      description:
-        "X-ray and gamma-ray imaging for internal defect detection in welds, castings, and components.",
-      applications: [
-        "Weld quality assessment",
-        "Internal porosity",
-        "Inclusion detection",
-      ],
-    },
-    {
-      icon: <Waves className="w-8 h-8" />,
-      method: "UT",
-      title: "Ultrasonic Testing",
-      description:
-        "High-frequency sound waves for thickness measurement and internal flaw detection.",
-      applications: [
-        "Thickness gauging",
-        "Lamination detection",
-        "Corrosion assessment",
-      ],
-    },
-    {
-      icon: <Eye className="w-8 h-8" />,
-      method: "VT",
-      title: "Visual Testing",
-      description:
-        "Direct visual examination and remote visual inspection (RVI) for surface condition assessment.",
-      applications: [
-        "Weld surface inspection",
-        "Dimensional verification",
-        "General condition assessment",
-      ],
+        "On-site inspection guidance, procedure development, and quality assurance programs.",
     },
   ];
 
-  const services = [
-    {
-      title: "NDT Training",
-      icon: <GraduationCap className="w-10 h-10" />,
-      description:
-        "Comprehensive training programs for NDT Level I, Level II, and Level III certifications aligned with ASNT SNT-TC-1A, ISO 9712, and EN 473.",
-      offerings: [
-        "Theory and practical training",
-        "Method-specific courses (PT, MT, RT, UT, VT)",
-        "On-site or facility-based training",
-        "Examination preparation",
-      ],
-    },
-    {
-      title: "Personnel Certification",
-      icon: <Award className="w-10 h-10" />,
-      description:
-        "NDT personnel qualification and certification in accordance with internationally recognized standards.",
-      offerings: [
-        "Written and practical examinations",
-        "Vision testing coordination",
-        "Certification issuance",
-        "Recertification support",
-      ],
-    },
-    {
-      title: "Inspection & Technical Support",
-      icon: <Microscope className="w-10 h-10" />,
-      description:
-        "On-site NDT inspection services and technical consultancy for projects and operations.",
-      offerings: [
-        "Project-based NDT services",
-        "Third-party inspection",
-        "Procedure development",
-        "Equipment calibration support",
-      ],
-    },
+  const advantages = [
+    "Audit and client acceptance through certified, competent personnel",
+    "Reliable inspections reducing defect escapes and rework",
+    "Digital exam results with instant transparency",
+    "Procedure compliance ensuring code alignment",
+    "Technical support for inspection readiness",
   ];
 
   return (
@@ -130,149 +83,58 @@ export default function NDTServicesPage() {
         <div className="relative z-10 h-full text-white flex items-center">
           <div className="p-4 md:p-12 space-y-6 max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-              NDT Services
+              NDT Training, Certification & Technical Services
             </h1>
             <p className="text-lg md:text-2xl max-w-3xl leading-relaxed">
-              Non-Destructive Testing training, certification, and inspection
-              support for quality assurance
+              Competent personnel for RT, UT, MT, PT, VT (Levels I/II) with
+              digital examinations and procedure guidance
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Overview */}
+      <section className="px-4 md:px-8 space-y-8">
+        <div className="max-w-5xl mx-auto space-y-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
+            Comprehensive NDT Services
+          </h2>
+
+          <p className="text-lg text-black/70 leading-relaxed">
+            BESCERT provides training and support for non-destructive testing
+            personnel across radiographic, ultrasonic, magnetic particle, liquid
+            penetrant, and visual testing methods at Levels I and II. Our
+            digital examination system provides immediate, transparent results,
+            eliminating delays and ensuring competency verification. We also
+            offer procedure guidance, technical audits, and inspection readiness
+            programs.
+          </p>
         </div>
       </section>
 
       {/* NDT Methods */}
-      <section className="px-4 md:px-8 space-y-8">
-        <div className="max-w-6xl mx-auto space-y-8">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
-              NDT Methods We Support
-            </h2>
-            <p className="text-lg text-black/70 max-w-3xl mx-auto">
-              Comprehensive coverage of critical inspection techniques
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {methods.slice(0, 3).map((method, index) => (
-              <Card key={index} className="border border-bes-primary/20">
-                <CardBody className="p-8 space-y-4">
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 rounded-full bg-bes-primary text-white">
-                      {method.icon}
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-bes-accent">
-                        {method.method}
-                      </div>
-                      <h3 className="text-xl font-bold text-bes-primary">
-                        {method.title}
-                      </h3>
-                    </div>
-                  </div>
-
-                  <p className="text-sm text-black/70 leading-relaxed">
-                    {method.description}
-                  </p>
-
-                  <div className="pt-3 border-t border-bes-primary/10">
-                    <p className="text-xs font-semibold text-black/60 uppercase mb-2">
-                      Applications
-                    </p>
-                    <ul className="space-y-1">
-                      {method.applications.map((app, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-start gap-2 text-sm"
-                        >
-                          <span className="text-bes-accent mt-0.5">•</span>
-                          <span className="text-black/70">{app}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardBody>
-              </Card>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {methods.slice(3).map((method, index) => (
-              <Card key={index} className="border border-bes-primary/20">
-                <CardBody className="p-8 space-y-4">
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 rounded-full bg-bes-primary text-white">
-                      {method.icon}
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-bes-accent">
-                        {method.method}
-                      </div>
-                      <h3 className="text-xl font-bold text-bes-primary">
-                        {method.title}
-                      </h3>
-                    </div>
-                  </div>
-
-                  <p className="text-sm text-black/70 leading-relaxed">
-                    {method.description}
-                  </p>
-
-                  <div className="pt-3 border-t border-bes-primary/10">
-                    <p className="text-xs font-semibold text-black/60 uppercase mb-2">
-                      Applications
-                    </p>
-                    <ul className="space-y-1">
-                      {method.applications.map((app, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-start gap-2 text-sm"
-                        >
-                          <span className="text-bes-accent mt-0.5">•</span>
-                          <span className="text-black/70">{app}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardBody>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Service Offerings */}
       <section className="px-4 md:px-8 py-12 bg-secondary-50 rounded-3xl">
         <div className="max-w-6xl mx-auto space-y-8">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
-              Our NDT Service Offerings
-            </h2>
-          </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
+            NDT Methods Supported
+          </h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {services.map((service, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {ndtMethods.map((method, index) => (
               <Card key={index} className="border border-bes-primary/20">
-                <CardBody className="p-8 space-y-4">
-                  <div className="p-4 rounded-full bg-bes-primary text-white w-fit">
-                    {service.icon}
+                <CardBody className="p-6 space-y-3 text-center">
+                  <div className="p-4 rounded-full bg-bes-primary text-white w-fit mx-auto">
+                    <Microscope className="w-8 h-8" />
                   </div>
-
-                  <h3 className="text-2xl font-bold text-bes-primary">
-                    {service.title}
+                  <div className="text-2xl font-bold text-bes-accent">
+                    {method.code}
+                  </div>
+                  <h3 className="text-lg font-bold text-bes-primary">
+                    {method.name}
                   </h3>
-
-                  <p className="text-black/70 leading-relaxed">
-                    {service.description}
+                  <p className="text-sm text-black/60">
+                    Levels: {method.levels}
                   </p>
-
-                  <ul className="space-y-2 pt-3 border-t border-bes-primary/10">
-                    {service.offerings.map((offering, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm">
-                        <span className="text-bes-accent mt-0.5">✓</span>
-                        <span className="text-black/70">{offering}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </CardBody>
               </Card>
             ))}
@@ -280,57 +142,88 @@ export default function NDTServicesPage() {
         </div>
       </section>
 
-      {/* Standards & Compliance */}
+      {/* Services Included */}
+      <section className="px-4 md:px-8 space-y-8">
+        <div className="max-w-6xl mx-auto space-y-8">
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
+            Services Included
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {servicesIncluded.map((service, index) => (
+              <Card key={index} className="border border-bes-primary/20">
+                <CardBody className="p-6 space-y-4">
+                  <div className="p-3 rounded-full bg-bes-primary text-white w-fit">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-bes-primary">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-black/70 leading-relaxed">
+                    {service.description}
+                  </p>
+                </CardBody>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Advantages */}
       <section className="px-4 md:px-8 space-y-8">
         <div className="max-w-5xl mx-auto space-y-6">
           <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
-            Standards & Compliance
+            Key Advantages
           </h2>
 
-          <p className="text-lg text-black/70 text-center leading-relaxed">
-            Our NDT training and certification programs are aligned with
-            internationally recognized standards
+          <Card className="border border-bes-primary/20">
+            <CardBody className="p-8">
+              <ul className="space-y-3">
+                {advantages.map((advantage, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-bes-accent shrink-0 mt-0.5" />
+                    <span className="text-lg text-black/70">{advantage}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardBody>
+          </Card>
+        </div>
+      </section>
+
+      {/* Digital Training */}
+      <section className="px-4 md:px-8 py-12 bg-secondary-50 rounded-3xl">
+        <div className="max-w-5xl mx-auto space-y-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-bes-primary">
+            Digital Training Platform
+          </h2>
+          <p className="text-lg text-black/70 max-w-3xl mx-auto leading-relaxed">
+            Our digital examination system provides instant results with
+            complete transparency—no delays, no manual errors. Trainees receive
+            immediate feedback, and organizations get verified competency
+            records for audit confidence.
           </p>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="border border-bes-primary/20 bg-bes-primary/5">
-              <CardBody className="p-6 text-center space-y-2">
-                <h3 className="text-xl font-bold text-bes-primary">
-                  ASNT SNT-TC-1A
-                </h3>
-                <p className="text-sm text-black/70">
-                  American Society for Nondestructive Testing
-                </p>
-              </CardBody>
-            </Card>
-
-            <Card className="border border-bes-primary/20 bg-bes-primary/5">
-              <CardBody className="p-6 text-center space-y-2">
-                <h3 className="text-xl font-bold text-bes-primary">ISO 9712</h3>
-                <p className="text-sm text-black/70">
-                  International NDT personnel qualification standard
-                </p>
-              </CardBody>
-            </Card>
-
-            <Card className="border border-bes-primary/20 bg-bes-primary/5">
-              <CardBody className="p-6 text-center space-y-2">
-                <h3 className="text-xl font-bold text-bes-primary">EN 473</h3>
-                <p className="text-sm text-black/70">
-                  European NDT certification standard
-                </p>
-              </CardBody>
-            </Card>
-          </div>
+          <Link href="/services/digital">
+            <Button
+              size="lg"
+              variant="bordered"
+              className="border-2 border-bes-primary text-bes-primary hover:bg-bes-primary hover:text-white font-semibold"
+            >
+              Learn About Digital Systems
+            </Button>
+          </Link>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="px-4 md:px-8 py-16 bg-bes-primary rounded-3xl">
         <div className="max-w-4xl mx-auto text-center space-y-6 text-white">
-          <h2 className="text-3xl md:text-5xl font-bold">Need NDT Services?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold">
+            Ready to Build NDT Competency?
+          </h2>
           <p className="text-lg md:text-xl opacity-90">
-            Contact us for training, certification, or inspection support
+            Let's discuss your NDT training, certification, and inspection
+            support needs
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center pt-4">
             <Link href="/contact">

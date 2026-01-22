@@ -16,80 +16,80 @@ export default function ServicesPage() {
   const services = [
     {
       icon: <Award className="w-12 h-12" />,
-      title: "ISO Certification & Consultancy",
+      title: "ISO Management System Consultancy",
       description:
-        "ISO 9001, 14001, and 45001 certification support with practical implementation packages tailored to your business needs.",
+        "Design audit-ready systems improving control and reducing risk across ISO 9001, 14001, 45001, 27001, and 17025 standards.",
       href: "/services/iso",
       features: [
-        "End-to-end certification support",
-        "Digital documentation systems",
-        "Internal audit programs",
-        "NC closure assistance",
+        "80% implementation, 20% planning",
+        "Digital reporting and approvals",
+        "PDCA and risk integration",
+        "One-year assurance included",
       ],
     },
     {
       icon: <FileCheck className="w-12 h-12" />,
-      title: "API Q1 Consultancy",
+      title: "API Compliance & Technical Consultancy",
       description:
-        "Specialized API Q1 quality management system implementation for oil & gas manufacturing and service organizations.",
+        "Oil & gas/EPC compliance via API Q1 gap analysis, MOC controls, traceability, and audit readiness programs.",
       href: "/services/api-q1",
       features: [
-        "Risk-based approach",
         "Product realization focus",
-        "Integration with ISO systems",
-        "Audit readiness programs",
+        "Supplier and MOC controls",
+        "Nonconformity closure",
+        "Customer confidence building",
       ],
     },
     {
       icon: <Microscope className="w-12 h-12" />,
-      title: "NDT Services",
+      title: "NDT Training, Certification & Technical Services",
       description:
-        "Comprehensive Non-Destructive Testing services including training, certification, and inspection support.",
+        "Competent personnel for RT, UT, MT, PT, VT (Levels I/II) with digital examinations and procedure guidance.",
       href: "/services/ndt",
       features: [
-        "PT, MT, RT, UT, VT methods",
-        "NDT Level I, II, III training",
-        "Personnel certification",
-        "Technical inspection support",
+        "Field-oriented training",
+        "Digital instant-result exams",
+        "Inspection readiness",
+        "Compliance verification",
       ],
     },
     {
       icon: <Flame className="w-12 h-12" />,
-      title: "Welding Services",
+      title: "Welding Training, Certification & Technical Services",
       description:
-        "Welding training, qualification, and procedure development aligned with international standards.",
+        "Welder qualification, defect analysis, WPS/PQR development, and code compliance for reliable fabrication.",
       href: "/services/welding",
       features: [
-        "Welder training programs",
-        "WPS/PQR development",
         "Welder qualification testing",
-        "Technical audits",
+        "WPS/PQR review",
+        "Inspection and audits",
+        "Rework reduction",
+      ],
+    },
+    {
+      icon: <Database className="w-12 h-12" />,
+      title: "Digital Systems & Continuous Support",
+      description:
+        "Management software, dashboards, mobile apps integrated into all services for error-free reporting and sustained control.",
+      href: "/services/digital",
+      features: [
+        "Cloud-based platforms",
+        "Mobile approvals and tracking",
+        "Real-time KPI dashboards",
+        "System stabilization post-implementation",
       ],
     },
     {
       icon: <ClipboardCheck className="w-12 h-12" />,
       title: "Inspection & Audit Management",
       description:
-        "Internal audits, supplier assessments, gap analysis, and continuous improvement tracking.",
+        "Internal audits, supplier assessments, gap analysis, NCR tracking, and corrective action programs.",
       href: "/services/inspection",
       features: [
         "Internal audit programs",
-        "Supplier audits",
+        "Supplier assessments",
         "Gap analysis",
-        "Corrective action tracking",
-      ],
-    },
-    {
-      icon: <Database className="w-12 h-12" />,
-      title: "Digital Enablement",
-      description:
-        "Management software, mobile apps, and digital platforms for audit-ready compliance and real-time reporting.",
-      href: "/services/digital",
-      features: [
-        "Cloud-based management systems",
-        "Mobile inspection apps",
-        "KPI dashboards",
-        "Document control systems",
+        "Digital tracking systems",
       ],
     },
   ];
@@ -113,8 +113,13 @@ export default function ServicesPage() {
               Our Services
             </h1>
             <p className="text-lg md:text-2xl max-w-3xl leading-relaxed">
-              Comprehensive certification, consultancy, and technical services
+              Comprehensive compliance, technical services, and digital systems
               for industrial excellence
+            </p>
+            <p className="text-base md:text-lg max-w-2xl leading-relaxed opacity-95">
+              Each service includes digital integration and one-year consultancy
+              assurance for measurable improvement from your current maturity
+              level.
             </p>
           </div>
         </div>
@@ -129,8 +134,7 @@ export default function ServicesPage() {
             </h2>
             <p className="text-lg text-black/70 max-w-3xl mx-auto">
               From ISO certification to specialized technical services, we
-              provide end-to-end solutions for your compliance and performance
-              needs.
+              provide end-to-end solutions integrated with digital systems.
             </p>
           </div>
 
@@ -178,11 +182,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Why BES Services */}
+      {/* Why Choose BESCERT Services */}
       <section className="px-4 md:px-8 py-12 bg-secondary-50 rounded-3xl">
         <div className="max-w-5xl mx-auto space-y-8">
           <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
-            Why Choose BES Services
+            Why Choose BESCERT Services
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -190,26 +194,42 @@ export default function ServicesPage() {
               <div className="text-4xl font-bold text-bes-primary">80/20</div>
               <h3 className="text-xl font-semibold">Implementation Focus</h3>
               <p className="text-black/70">
-                80% practical execution, 20% planning and documentation
+                80% practical execution, 20% planning—systems operate on the
+                shop floor
               </p>
             </div>
 
             <div className="space-y-3 text-center">
               <div className="text-4xl font-bold text-bes-primary">100%</div>
-              <h3 className="text-xl font-semibold">Digital Systems</h3>
+              <h3 className="text-xl font-semibold">Digital Integration</h3>
               <p className="text-black/70">
-                Cloud-based platforms and mobile apps for all services
+                Digital platforms, mobile apps, and dashboards included in every
+                service
               </p>
             </div>
 
             <div className="space-y-3 text-center">
-              <div className="text-4xl font-bold text-bes-primary">Zero</div>
-              <h3 className="text-xl font-semibold">NC Target</h3>
+              <div className="text-4xl font-bold text-bes-primary">1 Year</div>
+              <h3 className="text-xl font-semibold">Assurance Included</h3>
               <p className="text-black/70">
-                Zero-nonconformity mindset in all certification projects
+                Continuous support, audit handholding, and system stabilization
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Global Delivery */}
+      <section className="px-4 md:px-8 space-y-6">
+        <div className="max-w-5xl mx-auto text-center space-y-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-bes-primary">
+            Global Delivery
+          </h2>
+          <p className="text-lg text-black/70 max-w-3xl mx-auto leading-relaxed">
+            Services across <strong>India</strong> (Chennai, Trichy, Coimbatore,
+            PAN-India) and <strong>international markets</strong> including
+            Nepal, Singapore, Malaysia, KSA, UAE, Kuwait, Qatar, and Bahrain.
+          </p>
         </div>
       </section>
 
@@ -237,7 +257,7 @@ export default function ServicesPage() {
                 variant="bordered"
                 className="border-2 border-white text-white hover:bg-white/10 font-semibold text-lg px-8"
               >
-                Why Choose BES
+                Why Choose BESCERT
               </Button>
             </Link>
           </div>

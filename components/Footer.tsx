@@ -86,7 +86,7 @@ export default function Footer() {
               Building systems that grow businesses.
             </p>
             <div className="flex items-start gap-2 text-small text-default-500">
-              <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+              <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
               <span>Chennai, India</span>
             </div>
             <div className="flex space-x-6">
