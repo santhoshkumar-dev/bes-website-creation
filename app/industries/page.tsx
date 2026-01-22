@@ -101,12 +101,12 @@ export default function IndustriesPage() {
   return (
     <main className="space-y-12 md:space-y-20">
       {/* Hero Section */}
-      <section className="relative h-[60vh] rounded-3xl overflow-hidden">
+      <section className="relative h-[80vh] rounded-3xl overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/hero.jpg')",
+              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/header-2.avif')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -205,7 +205,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Common Needs */}
-      <section className="px-4 md:px-8 py-12 bg-secondary-50 rounded-3xl">
+      <section className="px-4 md:px-8 py-12 bg-[#C7DFF0] rounded-3xl">
         <div className="max-w-5xl mx-auto space-y-8">
           <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
             Common Across All Industries

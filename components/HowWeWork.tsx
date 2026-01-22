@@ -35,7 +35,7 @@ export default function HowWeWork() {
   ];
 
   return (
-    <section className="px-4 md:px-8 py-12 bg-secondary-50 rounded-3xl">
+    <section className="px-4 md:px-8 py-12 bg-[#C7DFF0] rounded-3xl">
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="text-center space-y-4">
           <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">

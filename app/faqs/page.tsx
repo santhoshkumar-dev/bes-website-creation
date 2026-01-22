@@ -97,7 +97,7 @@ export default function FAQsPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(rgba(0,51,102,0.85), rgba(0,51,102,0.85)), url('/hero.jpg')",
+              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/hero.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

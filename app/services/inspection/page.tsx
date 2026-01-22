@@ -3,122 +3,71 @@
 import { Card, CardBody, Button } from "@heroui/react";
 import {
   ClipboardCheck,
-  Search,
+  CheckCircle2,
   Users,
+  FileSearch,
   TrendingUp,
-  FileText,
-  AlertCircle,
+  Shield,
 } from "lucide-react";
 import Link from "next/link";
 
 export default function InspectionAuditPage() {
-  const services = [
+  const servicesOffered = [
     {
-      icon: <ClipboardCheck className="w-10 h-10" />,
+      icon: <ClipboardCheck className="w-8 h-8" />,
       title: "Internal Audit Programs",
       description:
-        "Comprehensive internal audit planning, execution, and reporting for ISO, API, and custom management systems.",
-      features: [
-        "Annual audit program development",
-        "Risk-based audit planning",
-        "On-site audit execution",
-        "Detailed audit reports",
-        "Finding categorization (NC, OFI)",
-        "Follow-up and verification",
-      ],
+        "Scheduled internal audits per ISO/API requirements with competent auditors and digital checklists.",
     },
     {
-      icon: <Users className="w-10 h-10" />,
-      title: "Supplier Audits",
+      icon: <Users className="w-8 h-8" />,
+      title: "Supplier Assessments",
       description:
-        "Second-party audits to evaluate supplier quality systems and ensure supply chain compliance.",
-      features: [
-        "Supplier qualification audits",
-        "Ongoing performance audits",
-        "Corrective action tracking",
-        "Supplier risk assessment",
-        "Approved vendor list management",
-      ],
+        "Supplier evaluation, qualification, and monitoring programs to ensure quality and compliance.",
     },
     {
-      icon: <Search className="w-10 h-10" />,
+      icon: <FileSearch className="w-8 h-8" />,
       title: "Gap Analysis",
       description:
-        "Systematic evaluation of your current systems against ISO, API, or custom requirements.",
-      features: [
-        "Standard compliance assessment",
-        "Gap identification and prioritization",
-        "Implementation roadmap",
-        "Resource requirement analysis",
-        "Timeline and milestone planning",
-      ],
+        "Current state assessment against standards, identification of gaps, and practical closure plans.",
     },
     {
-      icon: <TrendingUp className="w-10 h-10" />,
-      title: "Continuous Improvement Tracking",
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "NCR & Corrective Action Tracking",
       description:
-        "Structured tracking of corrective actions, preventive actions, and improvement initiatives.",
-      features: [
-        "CAPA (Corrective and Preventive Action) management",
-        "Root cause analysis facilitation",
-        "Effectiveness verification",
-        "Trend analysis and reporting",
-        "Performance improvement monitoring",
-      ],
-    },
-  ];
-
-  const auditTypes = [
-    {
-      type: "ISO 9001 Quality Audits",
-      description:
-        "Process-based audits covering all QMS requirements and clause-by-clause compliance.",
+        "Nonconformity recording, root cause analysis, corrective action implementation, and closure verification.",
     },
     {
-      type: "ISO 14001 Environmental Audits",
+      icon: <Shield className="w-8 h-8" />,
+      title: "Audit Readiness Programs",
       description:
-        "Environmental aspect evaluation, legal compliance, and EMS effectiveness.",
+        "Pre-audit preparation, mock audits, gap closure support, and coordination with certification bodies.",
     },
     {
-      type: "ISO 45001 Safety Audits",
+      icon: <CheckCircle2 className="w-8 h-8" />,
+      title: "Digital Tracking Systems",
       description:
-        "Hazard identification, risk assessment, and OH&S management system review.",
-    },
-    {
-      type: "API Q1 Audits",
-      description:
-        "Product realization focus, APQP conformance, and API-specific requirements.",
-    },
-    {
-      type: "Process Audits",
-      description:
-        "Deep-dive audits into specific processes (production, inspection, calibration, etc.).",
-    },
-    {
-      type: "Product Audits",
-      description:
-        "Final product conformance verification against specifications and standards.",
+        "Mobile audit apps, finding logs, action tracking dashboards, and automated closure reminders.",
     },
   ];
 
   const benefits = [
-    "Objective third-party assessment",
-    "Early identification of nonconformities",
-    "Reduced certification audit failures",
-    "Continuous improvement culture",
-    "Documented compliance evidence",
-    "Enhanced operational efficiency",
+    "Proactive identification of compliance gaps before external audits",
+    "Structured corrective action programs preventing recurring issues",
+    "Supplier performance visibility and risk management",
+    "Digital tracking ensuring no findings are overlooked",
+    "Continuous improvement culture through systematic audits",
   ];
 
   return (
     <main className="space-y-12 md:space-y-20">
       {/* Hero Section */}
-      <section className="relative h-[60vh] rounded-3xl overflow-hidden">
+      <section className="relative h-[80vh] rounded-3xl overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(rgba(0,51,102,0.85), rgba(0,51,102,0.85)), url('/hero.jpg')",
+              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/inspection.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -129,82 +78,50 @@ export default function InspectionAuditPage() {
               Inspection & Audit Management
             </h1>
             <p className="text-lg md:text-2xl max-w-3xl leading-relaxed">
-              Systematic audits and inspections for compliance assurance and
-              continuous improvement
+              Internal audits, supplier assessments, gap analysis, NCR tracking,
+              and corrective action programs
             </p>
           </div>
         </div>
       </section>
 
-      {/* Service Offerings */}
+      {/* Overview */}
       <section className="px-4 md:px-8 space-y-8">
-        <div className="max-w-6xl mx-auto space-y-8">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
-              Our Audit & Inspection Services
-            </h2>
-            <p className="text-lg text-black/70 max-w-3xl mx-auto">
-              Comprehensive audit programs to maintain compliance and drive
-              improvement
-            </p>
-          </div>
+        <div className="max-w-5xl mx-auto space-y-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
+            Comprehensive Audit & Inspection Services
+          </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {services.map((service, index) => (
-              <Card key={index} className="border border-bes-primary/20">
-                <CardBody className="p-8 space-y-4">
-                  <div className="p-4 rounded-full bg-bes-primary text-white w-fit">
-                    {service.icon}
-                  </div>
-
-                  <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-bes-primary">
-                      {service.title}
-                    </h3>
-                    <p className="text-black/70 leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  <ul className="space-y-2 pt-3 border-t border-bes-primary/10">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm">
-                        <span className="text-bes-accent mt-0.5">✓</span>
-                        <span className="text-black/70">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardBody>
-              </Card>
-            ))}
-          </div>
+          <p className="text-lg text-black/70 leading-relaxed">
+            BESCERT provides internal audit programs, supplier assessments, gap
+            analysis, and corrective action tracking integrated with digital
+            systems. Our approach ensures continuous improvement, proactive gap
+            closure, and sustained audit readiness across all management systems
+            (ISO, API, NDT, Welding).
+          </p>
         </div>
       </section>
 
-      {/* Audit Types */}
-      <section className="px-4 md:px-8 py-12 bg-secondary-50 rounded-3xl">
+      {/* Services Offered */}
+      <section className="px-4 md:px-8 py-12 bg-[#C7DFF0] rounded-3xl">
         <div className="max-w-6xl mx-auto space-y-8">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
-              Types of Audits We Conduct
-            </h2>
-          </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
+            Services Offered
+          </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {auditTypes.map((audit, index) => (
+            {servicesOffered.map((service, index) => (
               <Card key={index} className="border border-bes-primary/20">
-                <CardBody className="p-6 space-y-3">
-                  <div className="flex items-start gap-3">
-                    <FileText className="w-6 h-6 text-bes-primary mt-1 flex-shrink-0" />
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-bold text-bes-primary">
-                        {audit.type}
-                      </h3>
-                      <p className="text-sm text-black/70">
-                        {audit.description}
-                      </p>
-                    </div>
+                <CardBody className="p-6 space-y-4">
+                  <div className="p-3 rounded-full bg-bes-primary text-white w-fit">
+                    {service.icon}
                   </div>
+                  <h3 className="text-lg font-bold text-bes-primary">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-black/70 leading-relaxed">
+                    {service.description}
+                  </p>
                 </CardBody>
               </Card>
             ))}
@@ -214,78 +131,90 @@ export default function InspectionAuditPage() {
 
       {/* Benefits */}
       <section className="px-4 md:px-8 space-y-8">
-        <div className="max-w-5xl mx-auto space-y-8">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-bes-primary">
-              Benefits of Regular Audits
-            </h2>
-          </div>
+        <div className="max-w-5xl mx-auto space-y-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
+            Key Benefits
+          </h2>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="border border-bes-primary/20">
-                <CardBody className="p-6 flex items-center gap-4">
-                  <AlertCircle className="w-8 h-8 text-bes-primary flex-shrink-0" />
-                  <p className="text-black/70 font-medium">{benefit}</p>
-                </CardBody>
-              </Card>
-            ))}
+          <Card className="border border-bes-primary/20">
+            <CardBody className="p-8">
+              <ul className="space-y-3">
+                {benefits.map((benefit, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-bes-accent shrink-0 mt-0.5" />
+                    <span className="text-lg text-black/70">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardBody>
+          </Card>
+        </div>
+      </section>
+
+      {/* Digital Integration */}
+      <section className="px-4 md:px-8 space-y-8">
+        <div className="max-w-5xl mx-auto space-y-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-bes-primary text-center">
+            Digital Tracking Systems
+          </h2>
+
+          <p className="text-lg text-black/70 text-center max-w-3xl mx-auto leading-relaxed">
+            Mobile audit apps enable field inspections with instant finding
+            capture. Digital dashboards track all NCRs, corrective actions, and
+            closure statuses in real-time. Automated reminders ensure no actions
+            are overlooked.
+          </p>
+
+          <div className="text-center pt-4">
+            <Link href="/services/digital">
+              <Button
+                size="lg"
+                variant="bordered"
+                className="border-2 border-bes-primary text-bes-primary hover:bg-bes-primary hover:text-white font-semibold"
+              >
+                Learn About Digital Systems
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Audit Process */}
-      <section className="px-4 md:px-8 py-12 bg-bes-accent/10 rounded-3xl">
-        <div className="max-w-5xl mx-auto space-y-8">
+      {/* Audit Readiness */}
+      <section className="px-4 md:px-8 py-12 bg-[#C7DFF0] rounded-3xl">
+        <div className="max-w-5xl mx-auto space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold text-bes-primary text-center">
-            Our Audit Process
+            Always Audit-Ready
           </h2>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 text-center">
             <Card className="border border-bes-primary/20">
-              <CardBody className="p-6 space-y-3 text-center">
-                <div className="text-3xl font-bold text-bes-primary">01</div>
-                <h3 className="text-lg font-bold text-bes-primary">Planning</h3>
+              <CardBody className="p-6 space-y-3">
+                <div className="text-3xl font-bold text-bes-primary">Zero</div>
+                <h3 className="text-lg font-semibold">Surprises</h3>
                 <p className="text-sm text-black/70">
-                  Audit scope, criteria, schedule, and checklist preparation
+                  Internal audits catch gaps before external bodies arrive
                 </p>
               </CardBody>
             </Card>
 
             <Card className="border border-bes-primary/20">
-              <CardBody className="p-6 space-y-3 text-center">
-                <div className="text-3xl font-bold text-bes-primary">02</div>
-                <h3 className="text-lg font-bold text-bes-primary">
-                  Execution
-                </h3>
+              <CardBody className="p-6 space-y-3">
+                <div className="text-3xl font-bold text-bes-primary">100%</div>
+                <h3 className="text-lg font-semibold">Traceability</h3>
                 <p className="text-sm text-black/70">
-                  On-site audit, interviews, document review, and evidence
-                  collection
+                  Complete digital records of all findings and closures
                 </p>
               </CardBody>
             </Card>
 
             <Card className="border border-bes-primary/20">
-              <CardBody className="p-6 space-y-3 text-center">
-                <div className="text-3xl font-bold text-bes-primary">03</div>
-                <h3 className="text-lg font-bold text-bes-primary">
-                  Reporting
-                </h3>
+              <CardBody className="p-6 space-y-3">
+                <div className="text-3xl font-bold text-bes-primary">
+                  Continuous
+                </div>
+                <h3 className="text-lg font-semibold">Improvement</h3>
                 <p className="text-sm text-black/70">
-                  Detailed audit report with findings, observations, and
-                  recommendations
-                </p>
-              </CardBody>
-            </Card>
-
-            <Card className="border border-bes-primary/20">
-              <CardBody className="p-6 space-y-3 text-center">
-                <div className="text-3xl font-bold text-bes-primary">04</div>
-                <h3 className="text-lg font-bold text-bes-primary">
-                  Follow-Up
-                </h3>
-                <p className="text-sm text-black/70">
-                  Corrective action verification and effectiveness confirmation
+                  Systematic audits drive ongoing performance gains
                 </p>
               </CardBody>
             </Card>
@@ -297,11 +226,11 @@ export default function InspectionAuditPage() {
       <section className="px-4 md:px-8 py-16 bg-bes-primary rounded-3xl">
         <div className="max-w-4xl mx-auto text-center space-y-6 text-white">
           <h2 className="text-3xl md:text-5xl font-bold">
-            Need Audit Support?
+            Ready to Strengthen Your Audit Programs?
           </h2>
           <p className="text-lg md:text-xl opacity-90">
-            Let's discuss your internal audit, supplier audit, or gap analysis
-            needs
+            Let's discuss internal audits, supplier assessments, and digital
+            tracking systems for your organization
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center pt-4">
             <Link href="/contact">

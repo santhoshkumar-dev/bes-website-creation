@@ -6,10 +6,30 @@ import Link from "next/link";
 
 export default function GlobalPresencePage() {
   const indiaLocations = [
-    { city: "Chennai", status: "Headquarters", state: "Tamil Nadu" },
-    { city: "Trichy", status: "Regional Office", state: "Tamil Nadu" },
-    { city: "Coimbatore", status: "Service Center", state: "Tamil Nadu" },
-    { city: "PAN-India", status: "Service Delivery", state: "All States" },
+    {
+      city: "Chennai",
+      status: "Headquarters",
+      state: "Tamil Nadu",
+      img: "/chennai.jpg",
+    },
+    {
+      city: "Trichy",
+      status: "Regional Office",
+      state: "Tamil Nadu",
+      img: "trichy.jpg",
+    },
+    {
+      city: "Coimbatore",
+      status: "Service Center",
+      state: "Tamil Nadu",
+      img: "coimbatore.jpg",
+    },
+    {
+      city: "PAN-India",
+      status: "Service Delivery",
+      state: "All States",
+      img: "pan-india.jpg",
+    },
   ];
 
   const internationalMarkets = [
@@ -26,12 +46,12 @@ export default function GlobalPresencePage() {
   return (
     <main className="space-y-12 md:space-y-20">
       {/* Hero Section */}
-      <section className="relative h-[60vh] rounded-3xl overflow-hidden">
+      <section className="relative h-[80vh] rounded-3xl overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(rgba(0,51,102,0.85), rgba(0,51,102,0.85)), url('/hero.jpg')",
+              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/hero.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -67,18 +87,30 @@ export default function GlobalPresencePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {indiaLocations.map((location, index) => (
-              <Card key={index} className="border border-bes-primary/20">
-                <CardBody className="p-6 space-y-3">
-                  <div className="p-3 rounded-full bg-bes-primary text-white w-fit">
-                    <MapPin className="w-6 h-6" />
+              <Card
+                key={index}
+                className="group relative overflow-hidden border border-bes-primary/20 text-white"
+              >
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                  style={{
+                    backgroundImage: `url(${location.img})`,
+                  }}
+                />
+
+                {/* Dark Overlay (changes to full black on hover) */}
+                <div className="absolute inset-0 bg-black/60 transition-colors duration-300" />
+
+                {/* Content */}
+                <CardBody className="relative z-10 p-6 space-y-3">
+                  <div className="rounded-full w-fit">
+                    <MapPin className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-bes-primary">
-                    {location.city}
-                  </h3>
-                  <p className="text-sm font-semibold text-bes-accent">
-                    {location.status}
-                  </p>
-                  <p className="text-sm text-black/70">{location.state}</p>
+
+                  <h3 className="text-xl font-bold">{location.city}</h3>
+
+                  <p className="text-sm text-white/80">{location.state}</p>
                 </CardBody>
               </Card>
             ))}
@@ -87,7 +119,7 @@ export default function GlobalPresencePage() {
       </section>
 
       {/* International Markets */}
-      <section className="px-4 md:px-8 py-12 bg-secondary-50 rounded-3xl">
+      <section className="px-4 md:px-8 py-12 bg-[#C7DFF0] rounded-3xl">
         <div className="max-w-6xl mx-auto space-y-8">
           <div className="text-center space-y-4">
             <div className="flex items-center justify-center gap-3">

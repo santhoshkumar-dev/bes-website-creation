@@ -62,12 +62,12 @@ export default function APICompliancePage() {
   return (
     <main className="space-y-12 md:space-y-20">
       {/* Hero Section */}
-      <section className="relative h-[60vh] rounded-3xl overflow-hidden">
+      <section className="relative h-[80vh] rounded-3xl overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(rgba(0,51,102,0.85), rgba(0,51,102,0.85)), url('/hero.jpg')",
+              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/oil-gas.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -104,7 +104,7 @@ export default function APICompliancePage() {
       </section>
 
       {/* Key Focus Areas */}
-      <section className="px-4 md:px-8 py-12 bg-secondary-50 rounded-3xl">
+      <section className="px-4 md:px-8 py-12 bg-[#C7DFF0] rounded-3xl">
         <div className="max-w-6xl mx-auto space-y-8">
           <h2 className="text-3xl md:text-5xl font-bold text-bes-primary text-center">
             Key Focus Areas
@@ -181,7 +181,7 @@ export default function APICompliancePage() {
       </section>
 
       {/* One-Year Assurance */}
-      <section className="px-4 md:px-8 py-12 bg-secondary-50 rounded-3xl">
+      <section className="px-4 md:px-8 py-12 bg-[#C7DFF0] rounded-3xl">
         <div className="max-w-5xl mx-auto space-y-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-bes-primary">
             One-Year Assurance Included
