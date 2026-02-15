@@ -1,43 +1,71 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Button } from "@heroui/react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const images = ["/custom/1.jpg", "/custom/2.jpg", "/custom/3.jpg"];
 
 export default function Hero() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [currentImage]);
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
   return (
-    <section className="relative h-[80vh] rounded-3xl overflow-hidden">
-      {/* Background */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('/hero1.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
+    <section className="relative h-[80vh] rounded-3xl overflow-hidden bg-[#003366]">
+      {/* Background Carousel */}
+      {/* {images.map((src, index) => (
+        <motion.div
+          key={src}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: index === currentImage ? 1 : 0 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0"
+          style={{
+            background: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('${src}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+      ))} */}
 
       {/* Content */}
       <div className="relative z-10 h-full text-white flex items-center">
         <div className="p-4 md:p-12 space-y-6 max-w-4xl">
-          <h1 className="md:text-7xl text-4xl font-extrabold leading-tight">
-            Building Systems <br />
-            That Grow Businesses
+          <h1 className="md:text-xl text-lg font-extrabold leading-tight">
+            BES CERTIFICATION AND TECHNICAL SERVICES (BESCERT)
           </h1>
 
-          <p className="text-lg md:text-2xl max-w-3xl leading-relaxed">
-            ISO | API | Welding | NDT | Inspection | Audit | Digital Systems
+          <h1 className="md:text-5xl text-4xl font-extrabold leading-tight">
+            Building Management Systems That Drive Sustainable Business Growth.
+          </h1>
+
+          <p className="text-lg md:text-xl max-w-3xl leading-relaxed">
+            <span className="text-4xl">ISO • API • NDT • WELDING</span> <br />{" "}
+            CONSULTANCY • AUDIT • TRAINING • INSPECTION • Digital Systems
             <br />
-            <span className="font-semibold">
-              Assuring Your Business Growth.
-            </span>
           </p>
 
-          <p className="text-base md:text-lg max-w-2xl leading-relaxed opacity-95">
+          {/* <p className="text-base md:text-lg max-w-2xl leading-relaxed opacity-95">
             BESCERT delivers practical, digital, audit-ready management systems
             to manufacturing, engineering, EPC, oil & gas, and service
             industries across India and global markets.
-          </p>
+          </p> */}
 
           <div className="flex flex-col md:flex-row gap-4 pt-4">
             <Link href="/contact">
@@ -58,6 +86,9 @@ export default function Hero() {
               </Button>
             </Link>
           </div>
+          <span className="font-semibold text-4xl">
+            Assuring Your Business Growth.
+          </span>
         </div>
       </div>
     </section>

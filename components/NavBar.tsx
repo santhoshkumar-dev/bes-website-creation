@@ -65,7 +65,7 @@ export default function NavBar() {
                 <DropdownTrigger>
                   <Button
                     disableRipple
-                    className="p-0 bg-transparent data-[hover=true]:bg-transparent font-medium text-foreground"
+                    className="p-0 bg-transparent data-[hover=true]:bg-transparent font-medium text-foreground text-[1rem]"
                     endContent={<ChevronDown className="w-4 h-4" />}
                     radius="sm"
                     variant="light"
