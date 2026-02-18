@@ -45,68 +45,68 @@ export default function Hero() {
       ))}
 
       <div className="relative z-10 h-full text-white flex items-center">
-        <div className="p-4 md:p-8 lg:p-12 space-y-4 md:space-y-6 max-w-4xl w-full">
-          <h1 className="text-sm sm:text-base md:text-lg lg:text-xl font-extrabold leading-tight">
+        <div className="p-6 md:p-10 lg:p-16 space-y-6 max-w-5xl w-full">
+          {/* Small Heading */}
+          <h1 className="font-extrabold leading-tight text-[clamp(0.8rem,1.2vw,1rem)] tracking-wide">
             BES CERTIFICATION AND TECHNICAL SERVICES (BESCERT)
           </h1>
 
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
+          {/* Main Heading */}
+          <h1 className="font-extrabold leading-tight text-[clamp(1.8rem,4vw,3.5rem)]">
             Building Management Systems That Drive Sustainable Business Growth.
           </h1>
 
-          <div className="text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl leading-relaxed space-y-2">
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold">
+          {/* Sub Content */}
+          <div className="leading-relaxed space-y-3 max-w-3xl">
+            <p className="font-semibold text-[clamp(1.2rem,2.5vw,2rem)]">
               ISO • API • NDT • WELDING
             </p>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg">
+
+            <p className="text-[clamp(0.85rem,1.3vw,1.1rem)] opacity-90">
               CONSULTANCY • AUDIT • CERTIFICATION • TRAINING • INSPECTION •
               DIGITAL
             </p>
           </div>
 
-          {/* Optional descriptive paragraph - uncomment if needed */}
-          {/* <p className="text-sm md:text-base lg:text-lg max-w-2xl leading-relaxed opacity-95">
-      BESCERT delivers practical, digital, audit-ready management systems
-      to manufacturing, engineering, EPC, oil & gas, and service
-      industries across India and global markets.
-    </p> */}
-
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <Link href="/contact" className="w-full sm:w-auto">
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-white text-bes-primary font-semibold text-base md:text-lg px-6 md:px-8 py-2 md:py-3"
+                className="w-full sm:w-auto bg-white text-bes-primary font-semibold px-8 py-3 text-base"
               >
                 Request a Consultation
               </Button>
             </Link>
+
             <Link href="/services" className="w-full sm:w-auto">
               <Button
                 size="lg"
                 variant="bordered"
-                className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10 font-semibold text-base md:text-lg px-6 md:px-8 py-2 md:py-3"
+                className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10 font-semibold px-8 py-3 text-base"
               >
                 Explore Our Services
               </Button>
             </Link>
-          </div>
-          <a
-            href="https://1drv.ms/b/c/B6F55A1E6BEC4AA2/IQCyUU7bPe7hQJRV9TJCOtTRAUlT8irOwmeLVe0GnfM3bIc?e=5Y0J46"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto"
-          >
-            <Button
-              size="lg"
-              variant="bordered"
-              className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10 font-semibold text-base md:text-lg px-6 md:px-8 py-2 md:py-3 flex items-center justify-center gap-2"
-            >
-              <Download className="w-5 h-5" />
-              Download Brochure
-            </Button>
-          </a>
 
-          <p className="font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl pt-2 md:pt-4">
+            <a
+              href="https://1drv.ms/b/c/B6F55A1E6BEC4AA2/IQCyUU7bPe7hQJRV9TJCOtTRAUlT8irOwmeLVe0GnfM3bIc?e=5Y0J46"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
+            >
+              <Button
+                size="lg"
+                variant="bordered"
+                className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10 font-semibold px-8 py-3 flex items-center justify-center gap-2 text-base"
+              >
+                <Download className="w-5 h-5" />
+                Download Brochure
+              </Button>
+            </a>
+          </div>
+
+          <p className="font-semibold text-[clamp(1.2rem,2.5vw,2rem)] pt-4">
             Assuring Your Business Growth.
           </p>
         </div>
