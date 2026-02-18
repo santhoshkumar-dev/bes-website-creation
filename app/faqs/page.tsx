@@ -66,7 +66,7 @@ export default function FAQsPage() {
       questions: [
         {
           q: "Where is BESCERT located?",
-          a: "BESCERT is headquartered in Chennai, India, with additional service centers in Trichy and Coimbatore. We provide PAN-India services and serve international markets including Nepal, Singapore, Malaysia, Saudi Arabia, UAE, Kuwait, Qatar, and Bahrain.",
+          a: "BESCERT is headquartered in Chennai, India, with additional service centers in Trichy and Coimbatore. We provide PAN-India services and serve international markets including  Singapore, Malaysia, Saudi Arabia, UAE, Oman,  Kuwait, Qatar, and Bahrain.",
         },
         {
           q: "Can BESCERT support multi-site implementations?",

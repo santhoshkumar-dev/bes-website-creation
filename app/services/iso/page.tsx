@@ -102,7 +102,7 @@ export default function ISOCertificationPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/paper-work.jpg')",
+              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/iso.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

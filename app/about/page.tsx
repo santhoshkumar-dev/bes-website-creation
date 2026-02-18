@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardBody, Button } from "@heroui/react";
+import { motion } from "framer-motion";
 import {
   CheckCircle2,
   Target,
@@ -10,8 +11,20 @@ import {
   Award,
 } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
+const images = ["/about.jpg", "about (2).jpg"];
 
 export default function AboutPage() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [currentImage]);
+
   const coreCommitments = [
     {
       icon: <Users className="w-10 h-10" />,
@@ -47,11 +60,27 @@ export default function AboutPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/hero.jpg')",
+              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/about.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
+
+        {images.map((src, index) => (
+          <motion.div
+            key={src}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: index === currentImage ? 1 : 0 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('${src}')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        ))}
+
         <div className="relative z-10 h-full text-white flex items-center">
           <div className="p-4 md:p-12 space-y-6 max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">

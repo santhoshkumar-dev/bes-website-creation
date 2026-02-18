@@ -1,10 +1,33 @@
 "use client";
 
 import { Card, CardBody, Button } from "@heroui/react";
-import { Factory, Droplet, Zap, Building2, Cog } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  Factory,
+  Droplet,
+  Zap,
+  Building2,
+  Cog,
+  UtensilsCrossed,
+  GraduationCap,
+  Truck,
+  Monitor,
+} from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
+const images = ["/kpi.jpg", "/digital training.jpg", "/all-services.png"];
 
 export default function IndustriesPage() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [currentImage]);
+
   const industries = [
     {
       icon: <Droplet className="w-12 h-12" />,
@@ -96,29 +119,107 @@ export default function IndustriesPage() {
         "Digital document control",
       ],
     },
+    {
+      icon: <UtensilsCrossed className="w-12 h-12" />,
+      title: "Food & Beverage",
+      description:
+        "Food processing, packaging, and beverage manufacturers requiring food safety and quality certifications.",
+      challenges: [
+        "HACCP and ISO 22000 compliance",
+        "Hygiene and sanitation standards",
+        "Traceability and recall procedures",
+        "Allergen and contamination control",
+      ],
+      solutions: [
+        "ISO 22000 and HACCP certification",
+        "Food safety management systems",
+        "Supplier qualification programs",
+        "Digital traceability platforms",
+      ],
+    },
+    {
+      icon: <GraduationCap className="w-12 h-12" />,
+      title: "Education",
+      description:
+        "Educational institutions, training centers, and e-learning platforms seeking quality management and accreditation.",
+      challenges: [
+        "Accreditation requirements",
+        "Quality assurance frameworks",
+        "Operational consistency across campuses",
+        "Student satisfaction and outcomes",
+      ],
+      solutions: [
+        "ISO 9001 for educational institutions",
+        "Quality management system design",
+        "Process standardization",
+        "Performance monitoring dashboards",
+      ],
+    },
+    {
+      icon: <Truck className="w-12 h-12" />,
+      title: "Transportation & Mobility",
+      description:
+        "Fleet operators, logistics providers, and mobility services requiring safety and operational excellence.",
+      challenges: [
+        "Road safety management (ISO 39001)",
+        "Fleet maintenance and reliability",
+        "Driver competency and training",
+        "Environmental impact reduction",
+      ],
+      solutions: [
+        "ISO 39001 road traffic safety certification",
+        "Fleet management system integration",
+        "Driver training and qualification programs",
+        "Digital compliance and tracking tools",
+      ],
+    },
+    {
+      icon: <Monitor className="w-12 h-12" />,
+      title: "IT Services",
+      description:
+        "Software development, IT consulting, and technology service providers requiring information security and service quality.",
+      challenges: [
+        "Information security management (ISO 27001)",
+        "Data protection and privacy compliance",
+        "Service delivery consistency",
+        "Cybersecurity threat management",
+      ],
+      solutions: [
+        "ISO 27001 ISMS certification",
+        "ISO 20000 IT service management",
+        "Security audit and gap assessment",
+        "Digital security management platforms",
+      ],
+    },
   ];
 
   return (
     <main className="space-y-12 md:space-y-20">
       {/* Hero Section */}
       <section className="relative h-[80vh] rounded-3xl overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/header-2.avif')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+        {images.map((src, index) => (
+          <motion.div
+            key={src}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: index === currentImage ? 1 : 0 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('${src}')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        ))}
+
         <div className="relative z-10 h-full text-white flex items-center">
           <div className="p-4 md:p-12 space-y-6 max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
               Industries We Serve
             </h1>
             <p className="text-lg md:text-2xl max-w-3xl leading-relaxed">
-              Specialized certification and technical services for industrial,
-              manufacturing, and energy sectors
+              Specialized certification and technical services across
+              industrial, manufacturing, technology, and service sectors
             </p>
           </div>
         </div>
@@ -131,10 +232,10 @@ export default function IndustriesPage() {
             Enterprise-Focused Expertise
           </h2>
           <p className="text-lg text-black/70 leading-relaxed max-w-3xl mx-auto">
-            BES serves industrial organizations where quality, safety, and
-            compliance are critical to operations. We understand the technical
-            requirements, regulatory landscape, and operational challenges of
-            each sector we serve.
+            BESCERT serves organizations across diverse sectors where quality,
+            safety, and compliance are critical to operations. We understand the
+            technical requirements, regulatory landscape, and operational
+            challenges of each industry we serve.
           </p>
         </div>
       </section>
@@ -184,7 +285,7 @@ export default function IndustriesPage() {
                   {/* Solutions */}
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold text-bes-accent uppercase tracking-wide">
-                      BES Solutions
+                      BESCERT Solutions
                     </h4>
                     <ul className="space-y-3">
                       {industry.solutions.map((solution, idx) => (
@@ -258,7 +359,7 @@ export default function IndustriesPage() {
             Ready to Transform Your Compliance?
           </h2>
           <p className="text-lg md:text-xl opacity-90">
-            Let's discuss how BES can support your industry-specific needs
+            Let's discuss how BESCERT can support your industry-specific needs
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center pt-4">
             <Link href="/contact">

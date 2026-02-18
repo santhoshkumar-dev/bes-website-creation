@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardBody, Button } from "@heroui/react";
+import { motion } from "framer-motion";
 import {
   Award,
   FileCheck,
@@ -11,8 +12,24 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
+const images = [
+  "/all-services-3.jpg",
+  "/all-services-2.jpg",
+  "/all-services.png",
+];
 
 export default function ServicesPage() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [currentImage]);
+
   const services = [
     {
       icon: <Award className="w-12 h-12" />,
@@ -98,15 +115,21 @@ export default function ServicesPage() {
     <main className="space-y-12 md:space-y-20">
       {/* Hero Section */}
       <section className="relative h-[80vh] rounded-3xl overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/services.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+        {images.map((src, index) => (
+          <motion.div
+            key={src}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: index === currentImage ? 1 : 0 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('${src}')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        ))}
+
         <div className="relative z-10 h-full text-white flex items-center">
           <div className="p-4 md:p-12 space-y-6 max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
@@ -228,7 +251,7 @@ export default function ServicesPage() {
           <p className="text-lg text-black/70 max-w-3xl mx-auto leading-relaxed">
             Services across <strong>India</strong> (Chennai, Trichy, Coimbatore,
             PAN-India) and <strong>international markets</strong> including
-            Nepal, Singapore, Malaysia, KSA, UAE, Kuwait, Qatar, and Bahrain.
+            Singapore, Malaysia, KSA, UAE, Oman, Kuwait, Qatar, and Bahrain.
           </p>
         </div>
       </section>

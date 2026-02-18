@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { Button } from "@heroui/react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Download } from "lucide-react";
 
-const images = ["/custom/1.jpg", "/custom/2.jpg", "/custom/3.jpg"];
+const images = ["/custom/1.jpeg", "/custom/2.jpeg", "/custom/3.jpeg"];
 
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -29,7 +29,7 @@ export default function Hero() {
   return (
     <section className="relative h-[80vh] rounded-3xl overflow-hidden bg-[#003366]">
       {/* Background Carousel */}
-      {/* {images.map((src, index) => (
+      {images.map((src, index) => (
         <motion.div
           key={src}
           initial={{ opacity: 0 }}
@@ -42,7 +42,7 @@ export default function Hero() {
             backgroundPosition: "center",
           }}
         />
-      ))} */}
+      ))}
 
       {/* Content */}
       <div className="relative z-10 h-full text-white flex items-center">
@@ -57,7 +57,8 @@ export default function Hero() {
 
           <p className="text-lg md:text-xl max-w-3xl leading-relaxed">
             <span className="text-4xl">ISO • API • NDT • WELDING</span> <br />{" "}
-            CONSULTANCY • AUDIT • TRAINING • INSPECTION • Digital Systems
+            CONSULTANCY • AUDIT • CERTIFICATION • TRAINING • INSPECTION •
+            DIGITAL
             <br />
           </p>
 
@@ -86,6 +87,20 @@ export default function Hero() {
               </Button>
             </Link>
           </div>
+
+          <div className="pt-2">
+            <Button
+              as="a"
+              href="https://1drv.ms/b/c/B6F55A1E6BEC4AA2/IQCyUU7bPe7hQJRV9TJCOtTRAUlT8irOwmeLVe0GnfM3bIc?e=5Y0J46"
+              target="_blank"
+              size="lg"
+              variant="flat"
+              className="text-white font-semibold text-lg px-8"
+            >
+              Download Company Profile <Download />
+            </Button>
+          </div>
+
           <span className="font-semibold text-4xl">
             Assuring Your Business Growth.
           </span>

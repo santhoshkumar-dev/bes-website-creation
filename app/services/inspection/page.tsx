@@ -67,7 +67,7 @@ export default function InspectionAuditPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/inspection.jpg')",
+              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/services (3).jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

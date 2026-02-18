@@ -21,37 +21,37 @@ const items: CarouselItemData[] = [
   {
     title: "ISO Certification & Consultancy",
     subtitle: "ISO 9001, 14001, 45001",
-    image: "/paper-work.jpg",
+    image: "/iso.jpg",
     href: "/services/iso",
   },
   {
     title: "API Q1 Consultancy",
     subtitle: "Oil & Gas Sector",
-    image: "/oil-gas.jpg",
+    image: "/services (2).jpg",
     href: "/services/api-q1",
   },
   {
     title: "NDT Training & Certification",
     subtitle: "Technical Services",
-    image: "/inspection.jpg",
+    image: "/services (3).jpg",
     href: "/services/ndt",
   },
   {
     title: "Welding Training & Certification",
     subtitle: "Professional Development",
-    image: "/welder.jpg",
+    image: "/services (4).jpg",
     href: "/services/welding",
   },
   {
     title: "Inspection Services",
     subtitle: "Quality Assurance",
-    image: "/nda.jpg",
+    image: "/services (5).jpg",
     href: "/services/inspection",
   },
   {
     title: "Audit & Compliance Management",
     subtitle: "Risk Management",
-    image: "/audit.jpg",
+    image: "/services (6).jpg",
     href: "/services/inspection",
   },
 ];

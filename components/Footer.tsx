@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Divider, Link } from "@heroui/react";
-import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Linkedin, Mail, Phone, MapPin, PhoneCall } from "lucide-react";
 
 const footerNavigation = {
   services: [
@@ -25,8 +25,13 @@ const footerNavigation = {
     { name: "Contact Us", href: "/contact" },
   ],
   social: [
-    { name: "LinkedIn", href: "#", icon: Linkedin },
-    { name: "Email", href: "mailto:info@bescert.com", icon: Mail },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/bes-certification-and-technical-services-globally-ab80783a3/",
+      icon: Linkedin,
+    },
+    { name: "Email", href: "mailto:connect@bescert.com", icon: Mail },
+    { name: "WhatsApp", href: "https://wa.me/9444417337", icon: PhoneCall },
   ],
 };
 
@@ -77,9 +82,12 @@ export default function Footer() {
                 </div>
               </div>
             </div>
+
+            {/* GST  */}
             <p className="text-small text-default-500 leading-relaxed font-medium">
-              Assuring Your Business Growth.
+              GSTIN: 33ACCPE4171G1Z4
             </p>
+
             <p className="text-small text-default-500 leading-relaxed">
               ISO | API | Welding | NDT | Inspection | Audit | Digital Systems
               <br />

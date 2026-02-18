@@ -10,8 +10,21 @@ import {
   Zap,
 } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+const images = ["/why3.jpg", "/why.jpg", "/why2.jpg"];
 
 export default function WhyBESCERTPage() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [currentImage]);
+
   const differentiators = [
     {
       icon: <Target className="w-12 h-12" />,
@@ -82,15 +95,21 @@ export default function WhyBESCERTPage() {
     <main className="space-y-12 md:space-y-20">
       {/* Hero Section */}
       <section className="relative h-[80vh] rounded-3xl overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/hero.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+        {images.map((src, index) => (
+          <motion.div
+            key={src}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: index === currentImage ? 1 : 0 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('${src}')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        ))}
+
         <div className="relative z-10 h-full text-white flex items-center">
           <div className="p-4 md:p-12 space-y-6 max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">

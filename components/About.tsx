@@ -34,9 +34,10 @@ export default function About() {
           </h2>
           <p className="text-lg md:text-xl text-black/70 max-w-4xl mx-auto leading-relaxed">
             BES Certification and Technical Services (BESCERT) delivers ISO
-            consultancy, API compliance, welding and NDT technical services,
+            consultancy, API compliance, NDT and welding technical services,
             inspection, audit, and digital management systems to manufacturing,
-            engineering, EPC, oil & gas, and service industries across India and
+            engineering, EPC, oil & gas, food and beverage, education and
+            service transportation and mobility, industries across India and
             global markets.
           </p>
         </div>

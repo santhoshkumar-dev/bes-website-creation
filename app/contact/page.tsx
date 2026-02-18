@@ -12,7 +12,7 @@ export default function ContactPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/hero.jpg')",
+              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/global2.jpeg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -80,10 +80,10 @@ export default function ContactPage() {
                         Email
                       </h3>
                       <a
-                        href="mailto:info@bescert.com"
+                        href="mailto:connect@bescert.com"
                         className="text-black/70 hover:text-bes-primary transition"
                       >
-                        info@bescert.com
+                        connect@bescert.com
                       </a>
                     </div>
                   </div>
@@ -101,7 +101,7 @@ export default function ContactPage() {
                         Phone
                       </h3>
                       <p className="text-black/70">
-                        Contact us via email for phone consultation
+                        +91 94444 17337 / +91 99626 10605
                       </p>
                     </div>
                   </div>
@@ -117,8 +117,8 @@ export default function ContactPage() {
               <p className="text-black/70 leading-relaxed">
                 <strong>India:</strong> Chennai, Trichy, Coimbatore, PAN-India
                 <br />
-                <strong>International:</strong> Nepal, Singapore, Malaysia, KSA,
-                UAE, Kuwait, Qatar, Bahrain
+                <strong>International:</strong> Singapore, Malaysia, KSA, UAE,
+                Oman, Kuwait, Qatar, Bahrain
               </p>
             </div>
           </div>

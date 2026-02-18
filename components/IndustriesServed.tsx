@@ -1,7 +1,17 @@
 "use client";
 
 import { Card, CardBody } from "@heroui/react";
-import { Factory, Zap, Wrench, Droplet, Briefcase } from "lucide-react";
+import {
+  Factory,
+  Zap,
+  Wrench,
+  Droplet,
+  Briefcase,
+  UtensilsCrossed,
+  GraduationCap,
+  Truck,
+  Monitor,
+} from "lucide-react";
 
 export default function IndustriesServed() {
   const industries = [
@@ -30,10 +40,34 @@ export default function IndustriesServed() {
         "API compliance, technical audits, personnel certification, and reliability programs.",
     },
     {
+      icon: <UtensilsCrossed className="w-10 h-10" />,
+      title: "Food & Beverage",
+      description:
+        "HACCP, ISO 22000, food safety management, hygiene standards, and quality assurance.",
+    },
+    {
+      icon: <GraduationCap className="w-10 h-10" />,
+      title: "Education",
+      description:
+        "Quality management systems, accreditation support, operational standards, and institutional excellence.",
+    },
+    {
+      icon: <Truck className="w-10 h-10" />,
+      title: "Transportation & Mobility",
+      description:
+        "Fleet management systems, safety compliance, ISO 39001, logistics optimization, and service quality.",
+    },
+    {
       icon: <Briefcase className="w-10 h-10" />,
       title: "Service Industries",
       description:
         "Management systems, operational excellence, compliance programs, and performance improvement.",
+    },
+    {
+      icon: <Monitor className="w-10 h-10" />,
+      title: "IT Services",
+      description:
+        "ISO 27001, data security, ISMS implementation, cybersecurity compliance, and IT governance.",
     },
   ];
 
@@ -51,7 +85,7 @@ export default function IndustriesServed() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {industries.slice(0, -1).map((industry, index) => (
+          {industries.map((industry, index) => (
             <Card key={index} className="border border-bes-primary/20">
               <CardBody className="p-6 space-y-4">
                 <div className="p-4 rounded-full bg-bes-primary text-white w-fit">
@@ -68,30 +102,13 @@ export default function IndustriesServed() {
           ))}
         </div>
 
-        {/* Service Industries - Full Width */}
-        <Card className="border border-bes-primary/20">
-          <CardBody className="p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
-            <div className="p-4 rounded-full bg-bes-primary text-white">
-              {industries[4].icon}
-            </div>
-            <div className="space-y-2 text-center md:text-left">
-              <h3 className="text-xl font-bold text-bes-primary">
-                {industries[4].title}
-              </h3>
-              <p className="text-sm text-black/70 leading-relaxed">
-                {industries[4].description}
-              </p>
-            </div>
-          </CardBody>
-        </Card>
-
         <div className="text-center pt-4">
           <p className="text-base text-black/70 max-w-2xl mx-auto leading-relaxed">
             Serving organizations across{" "}
             <strong className="text-bes-primary">India</strong> (Chennai,
             Trichy, Coimbatore, PAN-India) and{" "}
             <strong className="text-bes-primary">international markets</strong>{" "}
-            including Nepal, Singapore, Malaysia, KSA, UAE, Kuwait, Qatar, and
+            including Singapore, Malaysia, KSA, UAE, Oman, Kuwait, Qatar, and
             Bahrain.
           </p>
         </div>

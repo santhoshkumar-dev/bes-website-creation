@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import FloatingContact from "@/components/FloatingContact";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -63,6 +64,7 @@ export default function RootLayout({
           {children}
 
           <Footer />
+          <FloatingContact />
         </Providers>
       </body>
     </html>
