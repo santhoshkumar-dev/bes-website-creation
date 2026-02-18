@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@heroui/react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Download } from "lucide-react";
 
 const images = ["/custom/1.jpeg", "/custom/2.jpeg", "/custom/3.jpeg"];
 
@@ -44,7 +44,6 @@ export default function Hero() {
         />
       ))}
 
-      {/* Content */}
       <div className="relative z-10 h-full text-white flex items-center">
         <div className="p-4 md:p-8 lg:p-12 space-y-4 md:space-y-6 max-w-4xl w-full">
           <h1 className="text-sm sm:text-base md:text-lg lg:text-xl font-extrabold leading-tight">
@@ -91,6 +90,21 @@ export default function Hero() {
               </Button>
             </Link>
           </div>
+          <a
+            href="https://1drv.ms/b/c/B6F55A1E6BEC4AA2/IQCyUU7bPe7hQJRV9TJCOtTRAUlT8irOwmeLVe0GnfM3bIc?e=5Y0J46"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto"
+          >
+            <Button
+              size="lg"
+              variant="bordered"
+              className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10 font-semibold text-base md:text-lg px-6 md:px-8 py-2 md:py-3 flex items-center justify-center gap-2"
+            >
+              <Download className="w-5 h-5" />
+              Download Brochure
+            </Button>
+          </a>
 
           <p className="font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl pt-2 md:pt-4">
             Assuring Your Business Growth.
