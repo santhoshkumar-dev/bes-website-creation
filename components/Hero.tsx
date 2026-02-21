@@ -90,7 +90,7 @@ export default function Hero() {
             </Link>
 
             <a
-              href="https://1drv.ms/b/c/B6F55A1E6BEC4AA2/IQCyUU7bPe7hQJRV9TJCOtTRAUlT8irOwmeLVe0GnfM3bIc?e=5Y0J46"
+              href="https://1drv.ms/b/c/B6F55A1E6BEC4AA2/IQDP02mJixKMQIu3BEkwSI9nARTCJMEVcu2TSPe23aCTeKs?e=CV0Grt"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto"

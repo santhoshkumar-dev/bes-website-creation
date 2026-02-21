@@ -19,7 +19,7 @@ export default function FAQsContent() {
         },
         {
           q: "Does BESCERT provide certification services?",
-          a: "No. BESCERT is a consultancy and technical services organization. Certification is issued by independent, accredited certification bodies (such as BSI, LRQA, TUV Süd, SGS). We prepare your organization for certification by building audit-ready systems and coordinate with certification bodies on your behalf.",
+          a: "No. BESCERT is a consultancy and technical services organization. Certification is issued by independent, accredited certification. We prepare your organization for certification by building audit-ready systems and coordinate with certification bodies on your behalf.",
         },
         {
           q: "What does the 80/20 implementation model mean?",

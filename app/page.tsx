@@ -9,7 +9,7 @@ import IndustriesServed from "@/components/IndustriesServed";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "BESCERT - Global ISO Certification & Technical Services",
+  title: "BESCERT - ISO, API, NDT System & Technical Services",
   description:
     "Leading provider of ISO consultancy, API compliance, NDT, welding, and digital management systems. Trusted by industries worldwide for business growth and compliance.",
   alternates: {

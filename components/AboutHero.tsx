@@ -17,7 +17,7 @@ export default function AboutHero() {
 
   return (
     <section className="relative h-[80vh] rounded-3xl overflow-hidden">
-      <div
+      {/* <div
         className="absolute inset-0"
         style={{
           background:
@@ -25,7 +25,7 @@ export default function AboutHero() {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-      />
+      /> */}
 
       {images.map((src, index) => (
         <motion.div

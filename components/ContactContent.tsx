@@ -147,11 +147,11 @@ export default function ContactContent() {
                   Certification is issued by independent, accredited
                   certification bodies
                 </strong>{" "}
-                (such as BSI, LRQA, TUV, SGS, etc.). BESCERT supports
-                organizations in achieving audit readiness and maintaining
-                compliance but does not provide certification services directly.
-                We coordinate with certification bodies on behalf of our clients
-                to ensure smooth audit processes and successful outcomes.
+                . BESCERT supports organizations in achieving audit readiness
+                and maintaining compliance but does not provide certification
+                services directly. We coordinate with certification bodies on
+                behalf of our clients to ensure smooth audit processes and
+                successful outcomes.
               </p>
             </CardBody>
           </Card>
@@ -166,8 +166,8 @@ export default function ContactContent() {
           </h2>
           <p className="text-lg opacity-90 leading-relaxed">
             28+ years collective experience • 80% implementation, 20% planning •
-            Digital systems mandatory • One-year assurance included •
-            Audit-ready systems that grow businesses
+            Management Software / Portal • Error free documentation • One-year
+            assurance included • Audit-ready systems that grow businesses
           </p>
         </div>
       </section>
